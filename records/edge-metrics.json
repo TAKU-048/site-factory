@@ -1,0 +1,506 @@
+[
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4340/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/services/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/approach/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/company/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/contact/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/privacy/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4340/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/services/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/approach/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/company/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/contact/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/privacy/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4340/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/services/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/approach/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/company/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/contact/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/privacy/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4340/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/services/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/approach/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/company/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/contact/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4340/privacy/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4341/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/services/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/approach/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/company/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/contact/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/privacy/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4341/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/services/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/approach/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/company/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/contact/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/privacy/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4341/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/services/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/approach/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/company/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/contact/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/privacy/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4341/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/services/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/approach/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/company/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/contact/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4341/privacy/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4342/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/services/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/approach/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/company/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/contact/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/privacy/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4342/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/services/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/approach/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/company/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/contact/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/privacy/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4342/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/services/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/approach/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/company/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/contact/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/privacy/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "emptyImage": "写真は提供待ちです",
+    "small": 0,
+    "url": "http://127.0.0.1:4342/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/services/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/approach/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/company/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/contact/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "emptyImage": null,
+    "small": 0,
+    "url": "http://127.0.0.1:4342/privacy/",
+    "viewport": 1280,
+    "width": 1280
+  }
+]

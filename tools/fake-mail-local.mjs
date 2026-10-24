@@ -1,0 +1,4 @@
+import http from 'node:http';
+const seen=new Map();let calls=0;
+const server=http.createServer(async(req,res)=>{if(req.method!=='POST'||req.url!=='/emails'){res.writeHead(404).end();return}let bytes=0,body='';for await(const chunk of req){bytes+=chunk.length;if(bytes>32768){res.writeHead(413).end();return}body+=chunk}const key=req.headers['idempotency-key'];if(typeof key!=='string'){res.writeHead(400).end();return}const known=seen.get(key);res.setHeader('Content-Type','application/json');if(known){if(known.body!==body){res.writeHead(409).end('{}');return}res.end(JSON.stringify({id:known.id}));return}calls++;if(calls===1){res.writeHead(503).end('{}');return}const id='local-'+crypto.randomUUID();seen.set(key,{id,body});res.end(JSON.stringify({id}));});
+server.listen(4351,'127.0.0.1',()=>console.log('偽メールAPI: 127.0.0.1:4351（最初の1件は503、外部メール送信なし）'));

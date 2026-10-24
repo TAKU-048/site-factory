@@ -1,0 +1,10 @@
+{
+  "id": "demo-logistics",
+  "revision": "dab1d244813f44ef1abc",
+  "presetId": "night-route",
+  "createdAt": "2026-10-21T08:25:33.772Z",
+  "updatedAt": "2026-10-21T08:47:14.022Z",
+  "status": "draft",
+  "approvals": {},
+  "engineVersion": "0.1.0"
+}

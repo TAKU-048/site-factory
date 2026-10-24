@@ -1,0 +1,31 @@
+---
+import site from '../data/site.json';
+import '../styles/site.css';
+import '../custom/client.css';
+interface Props {title:string;description:string;slug?:string}
+const {title,description,slug=''}=Astro.props;
+const canonical=new URL(slug?`/${slug}/`:'/',Astro.site);
+const design=site.design;
+const tokens=Object.entries(design.tokens).map(([k,v])=>`--${k}:${v}`).join(';');
+const nav=site.pages.filter(p=>p.slug!==''&&p.slug!=='privacy');
+const shortName=site.company.name.replace('（制作デモ）','');
+---
+<!doctype html><html lang="ja"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title} | {site.company.name}</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/><meta property="og:title" content={`${title} | ${site.company.name}`}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={canonical}/><meta name="robots" content="noindex, nofollow"/><meta name="theme-color" content={design.tokens.ink}/></head>
+<body data-design={design.id} data-page={slug||'home'} style={tokens}>
+<a class="skip-link" href="#main">本文へ移動</a>
+{site.demo&&<div class="demo-notice">飲食店のホームページの見本として作った架空のお店のサイトです。写真は素材サイト（Unsplash）のもので、実在のお店・料理ではありません。</div>}
+<header class="site-header">
+  <a class="brand" href="/" aria-label={`${shortName} トップ`}><span class="brand-kind">中華そば</span><span class="brand-name">灯</span></a>
+  <nav aria-label="メインナビゲーション">{nav.map(p=><a href={`/${p.slug}/`} aria-current={p.slug===slug?'page':undefined}>{p.title}</a>)}</nav>
+</header>
+<main id="main"><slot/></main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-name"><span>中華そば</span>灯</p>
+    <p class="footer-philosophy">{site.company.philosophy}</p>
+    <nav class="footer-links" aria-label="フッターナビゲーション"><a href="/">トップ</a>{nav.map(p=><a href={`/${p.slug}/`}>{p.title}</a>)}</nav>
+    <p class="footer-note">このサイトはデモです。価格・営業時間などはすべて架空の例です。</p>
+  </div>
+</footer>
+<script>import '../scripts/motion';</script>
+</body></html>

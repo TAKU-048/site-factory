@@ -1,0 +1,92 @@
+---
+// hair studio Lune（制作デモ）専用のセクション描画。データは共通エンジンの site.json（type / variant / items / imageId）。
+import site from '../data/site.json';
+import ContactForm from './ContactForm.astro';
+import {itemImages,asset,srcset,splitCat} from '../custom/media';
+interface Props {section:{id:string;type:string;variant?:string;heading?:string;body?:string;items?:{title:string;body:string}[];imageId?:string};first?:boolean}
+const {section:s,first=false}=Astro.props;
+const image=asset(s.imageId);
+const imgs=(itemImages[s.id]||[]).map(asset);
+const v=s.variant||'default';
+const H=first?'h1':'h2';
+const lines=(t?:string)=>(t||'').split('\n');
+const cats=[...new Set((s.items||[]).map(i=>splitCat(i.body).category).filter(Boolean))];
+---
+{s.type==='hero'?(
+<section class="hero" aria-labelledby="hero-title">
+  <svg class="strands" viewBox="0 0 1200 800" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" preserveAspectRatio="none">
+    <path class="st s1" d="M-20 620 C 180 520, 260 700, 460 600 S 760 380, 980 470 S 1180 600, 1240 520"/>
+    <path class="st s2" d="M-20 660 C 200 560, 300 740, 500 640 S 780 430, 1000 510 S 1180 650, 1240 560"/>
+    <path class="st s3" d="M-20 700 C 220 600, 330 780, 540 680 S 800 480, 1020 550 S 1180 700, 1240 600"/>
+    <path class="st s4" d="M-20 180 C 160 260, 300 80, 520 160 S 820 300, 1240 140"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1 id="hero-title">{lines(s.heading).map((l,i)=><span class="line" style={`--i:${i}`}>{l}</span>)}</h1>
+      <p class="hero-body">{s.body}</p>
+      <div class="hero-actions"><a class="button" href="/reserve/">予約する</a><a class="link" href="/menu/">メニューと料金</a></div>
+    </div>
+    <figure class="mirror mirror--hero">{image&&<img src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 768px) 90vw, 42vw" alt={image.alt} width="1067" height="1600" fetchpriority="high"/>}<span class="glint" aria-hidden="true"></span></figure>
+  </div>
+</section>
+):s.type==='intro'&&!first?(
+<section class="section about" id={s.id}>
+  <div class="wrap about-grid">
+    {image&&<figure class="mirror" data-reveal><img src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 768px) 90vw, 40vw" alt={image.alt} width="800" height="1000" loading="lazy"/><span class="glint" aria-hidden="true"></span></figure>}
+    <div class="about-text" data-reveal><h2>{s.heading}</h2>{s.body&&<p>{s.body}</p>}</div>
+  </div>
+</section>
+):s.type==='intro'?(
+<section class={`page-head ${image?'page-head--photo':''}`} id={s.id}>
+  <div class="wrap page-head-inner">
+    <div data-reveal><H class="page-title">{s.heading}</H>{s.body&&<p class="page-lead">{s.body}</p>}</div>
+    {image&&<figure class="mirror mirror--small" data-reveal><img src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 768px) 70vw, 30vw" alt={image.alt} width="800" height="1000" loading="lazy"/><span class="glint" aria-hidden="true"></span></figure>}
+  </div>
+</section>
+):s.type==='projects'&&v==='style-strip'?(
+<section class="section styles" id={s.id} data-carousel>
+  <div class="wrap"><div class="head-row" data-reveal><h2>{s.heading}</h2><div class="carousel-nav"><button type="button" data-prev aria-label="前のスタイル">前へ</button><button type="button" data-next aria-label="次のスタイル">次へ</button></div></div></div>
+  <ul class="style-track" data-track tabindex="0" aria-label="スタイルのイメージ（横にスクロールできます）">{s.items?.map((item,i)=>{const im=imgs[i];return <li data-reveal style={`--i:${i}`}><a href="/style/"><span class="mirror mirror--card">{im&&<img src={`/assets/${im.path}`} srcset={srcset(im.path)} sizes="(max-width: 768px) 70vw, 24vw" alt={im.alt} width="800" height="1000" loading="lazy"/>}</span><span class="style-name">{item.title}</span><span class="style-text">{item.body}</span></a></li>})}</ul>
+  {s.body&&<div class="wrap"><p class="note">{s.body}</p></div>}
+</section>
+):s.type==='projects'?(
+<section class="section gallery" id={s.id}>
+  <div class="wrap"><h2 class="sr-only">{s.heading}</h2>
+  <div class="filters" role="group" aria-label="長さ・カラーで絞り込む" data-filters hidden><button type="button" aria-pressed="true" data-filter="all">すべて</button>{cats.map(c=><button type="button" aria-pressed="false" data-filter={c}>{c}</button>)}</div>
+  <p class="sr-only" role="status" aria-live="polite" data-filter-status></p>
+  <ul class="gallery-grid">{s.items?.map((item,i)=>{const im=imgs[i];const c=splitCat(item.body);return <li data-category={c.category} class={`g-${i%3}`}><figure><span class="mirror mirror--card" data-reveal style={`--i:${i%3}`}>{im&&<img src={`/assets/${im.path}`} srcset={srcset(im.path)} sizes="(max-width: 768px) 90vw, 30vw" alt={im.alt} width="800" height="1000" loading="lazy"/>}</span><figcaption><span class="style-cat">{c.category}</span><span class="style-name">{item.title}</span><span class="style-text">{c.text}</span></figcaption></figure></li>})}</ul></div>
+</section>
+):s.type==='services'&&v==='menu-pick'?(
+<section class="section menu-pick" id={s.id}>
+  <div class="wrap narrow"><h2 data-reveal>{s.heading}</h2>
+  <dl class="price-list" data-reveal>{s.items?.map(item=><div><dt>{item.title}</dt><dd>{item.body}</dd></div>)}</dl>
+  <a class="link" href="/menu/" data-reveal>メニューと料金をすべて見る</a></div>
+</section>
+):s.type==='services'?(
+<section class="section price" id={s.id}>
+  <div class="wrap narrow price-card" data-reveal><h2>{s.heading}</h2>
+  <dl class="price-list">{s.items?.map(item=><div><dt>{item.title}</dt><dd>{item.body}</dd></div>)}</dl></div>
+</section>
+):s.type==='process'?(
+<section class="section visit" id={s.id}>
+  <div class="wrap"><h2 data-reveal>{s.heading}</h2>
+  <ol class="visit-list">{s.items?.map((item,i)=><li data-reveal style={`--i:${i}`}><h3>{item.title}</h3><p>{item.body}</p></li>)}</ol></div>
+</section>
+):s.type==='company'?(
+<section class="section info" id={s.id}>
+  <div class="wrap narrow"><h2 data-reveal>{s.heading}</h2>
+  <dl class="info-list" data-reveal>{s.items?.map(item=><div><dt>{item.title}</dt><dd>{item.body}</dd></div>)}</dl></div>
+</section>
+):s.type==='cta'?(
+<section class="reserve-cta" id={s.id}>
+  <div class="wrap reserve-inner" data-reveal><span class="arch-outline" aria-hidden="true"></span><h2>{s.heading}</h2>{s.body&&<p>{s.body}</p>}<a class="button" href="/reserve/">予約する</a></div>
+</section>
+):s.type==='form'?(
+<section class="section form-section" id={s.id}>
+  <div class="wrap narrow"><h2>{s.heading}</h2><ContactForm/></div>
+</section>
+):(
+<section class="section prose" id={s.id}>
+  <div class="wrap narrow"><H data-reveal>{s.heading}</H>{s.body&&<p class="prose-body">{s.body}</p>}</div>
+</section>
+)}

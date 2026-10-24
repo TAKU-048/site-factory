@@ -1,0 +1,10 @@
+---
+import site from '../data/site.json';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Section from '../components/Section.astro';
+export function getStaticPaths(){return site.pages.map(page=>({params:{slug:page.slug||undefined},props:{page}}));}
+const {page}=Astro.props;
+---
+<SiteLayout title={page.title} description={page.description} slug={page.slug}>
+{page.sections.map((section,index)=><Section section={section} first={index===0&&section.type!=='hero'}/>)}
+</SiteLayout>

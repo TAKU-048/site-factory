@@ -1,0 +1,17 @@
+---
+import site from '../data/site.json';
+const settings=site.form as {fields:string[];mode?:string};
+const mode=settings.mode||'disconnected';
+const local=mode==='local';
+const labels:Record<string,string>={name:'お名前',email:'メールアドレス',message:'ご相談内容',company:'会社名',phone:'電話番号'};
+---
+<div class="contact-layout"><div class="contact-note"><p>まだ言葉になっていないことから、お聞かせください。</p><p class="small">{local?'ローカル検証用です。入力はこの端末の検証環境に保存され、実際のメールは送信されません。':'このフォームは接続前の表示確認用です。入力内容は送信・保存されません。'}</p></div>
+<form data-contact-form data-mode={mode} aria-describedby="form-status" novalidate>
+<fieldset disabled={!local}><legend class="sr-only">お問い合わせ内容</legend>
+{settings.fields.map((field,i)=><div class="form-row"><label for={`field-${i}`}>{labels[field]||field}{['name','email','message'].includes(field)&&<span class="small">（必須）</span>}</label>{field==='message'?<textarea id={`field-${i}`} name={field} rows={5} required maxlength={5000}/>:<input id={`field-${i}`} name={field} type={field==='email'?'email':'text'} autocomplete={field==='name'?'name':field==='email'?'email':field==='phone'?'tel':'off'} required={['name','email'].includes(field)} maxlength={field==='name'?100:field==='email'?254:1000}/>}</div>)}
+<button type={local?'submit':'button'} disabled={!local}>{local?'お問い合わせを送る':'送信機能は未接続です'}</button></fieldset>
+<p id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1">{local?'必須項目をご入力ください。':'公開前に接続・実送信確認を行います。'}</p>
+{local&&<details class="local-controls"><summary>検証条件</summary><label for="local-scenario">動作を確認する条件</label><select id="local-scenario" data-local-scenario><option value="local-pass">正常</option><option value="local-storage-failure">保存障害</option><option value="local-expired">認証期限切れ</option></select></details>}
+<button type="button" data-new-contact hidden>新しいお問い合わせを書く</button>
+</form></div>
+<script>import '../scripts/contact';</script>

@@ -1,0 +1,12 @@
+// 営業用デモ demo-build-works の公開設定（2026-10-21）。誰でも閲覧できる（認証なし）とユーザー決定済み。
+// 公開URL: https://demo-build-works.tk-sites.workers.dev ／ 中身は clients/demo-build-works/dist（npm run build の出力）
+{
+  "name": "demo-build-works",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "../../clients/demo-build-works/dist",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": false
+}

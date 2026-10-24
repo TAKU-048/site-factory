@@ -1,0 +1,10 @@
+{
+  "id": "demo-build-works",
+  "revision": "a0ee3ac613db5b5daecf",
+  "presetId": "craft-quiet",
+  "createdAt": "2026-10-21T04:36:13.855Z",
+  "updatedAt": "2026-10-21T07:53:09.967Z",
+  "status": "review",
+  "approvals": {},
+  "engineVersion": "0.1.0"
+}

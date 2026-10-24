@@ -1,0 +1,13 @@
+---
+import site from '../data/site.json';
+import {siteLinks} from '../lib/links';
+const links=siteLinks(site.pages);
+interface Props {heading?:string;body?:string;variant?:string;imageId?:string}
+const {heading=site.company.tagline,body=site.company.description,variant=site.design.hero,imageId}=Astro.props;
+const image=site.assets.find(a=>a.id===imageId)||site.assets[0];
+---
+<section class={`hero hero--${variant}`} aria-labelledby="hero-title">
+<div class="hero-copy"><p class="hero-context">{site.company.name.replace('（制作デモ）','')}</p><h1 id="hero-title">{heading}</h1><p class="hero-body">{body}</p>{links.approach&&<a class="text-link" href={links.approach}>私たちの考え方<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>}</div>
+<figure class="hero-figure">{image?<img src={`/assets/${image.path}`} alt={image.alt} width="1600" height="1600" fetchpriority="high"/>:<div class="image-empty">写真は提供待ちです</div>}<figcaption>{image?.alt||'素材は提供待ちです'}<span>{image?.source||''}</span></figcaption></figure>
+<div class="hero-bottom"><span>{site.company.philosophy}</span></div>
+</section>

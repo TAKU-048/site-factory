@@ -1,0 +1,32 @@
+---
+// デモ専用フォーム：入力・確認はできるが、どこにも送信しない（通信処理を持たない）。
+import site from '../data/site.json';
+const fields=(site.form as {fields:string[]}).fields;
+const labels:Record<string,string>={name:'お名前',phone:'電話番号',email:'メールアドレス',message:'メッセージ'};
+const hints:Record<string,string>={message:'希望する職種、見学希望、聞きたいことなどを自由に書いてください。',phone:'ハイフンなしでも構いません。'};
+const required=['name','email'];
+---
+<form class="demo-form" data-demo-form novalidate aria-describedby="demo-form-note">
+  <p id="demo-form-note" class="form-note">デモのため、入力内容はどこにも送信・保存されません。</p>
+  {fields.map((f,i)=><div class="form-row">
+    <label for={`f-${i}`}>{labels[f]||f}{required.includes(f)?<span class="req">必須</span>:<span class="opt">任意</span>}</label>
+    {hints[f]&&<p class="hint" id={`h-${i}`}>{hints[f]}</p>}
+    {f==='message'?<textarea id={`f-${i}`} name={f} rows={5} maxlength={2000} aria-describedby={hints[f]?`h-${i}`:undefined}></textarea>
+    :<input id={`f-${i}`} name={f} type={f==='email'?'email':f==='phone'?'tel':'text'} autocomplete={f==='name'?'name':f==='email'?'email':f==='phone'?'tel':'off'} required={required.includes(f)} maxlength={f==='email'?254:100} aria-describedby={hints[f]?`h-${i}`:undefined}/>}
+  </div>)}
+  <button type="submit" class="button button--ink">内容を確認する</button>
+  <p class="form-status" role="status" aria-live="polite" tabindex="-1" data-status></p>
+</form>
+<script>
+for(const form of document.querySelectorAll<HTMLFormElement>('form[data-demo-form]')){
+  const status=form.querySelector<HTMLElement>('[data-status]')!;
+  form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const invalid=Array.from(form.querySelectorAll<HTMLInputElement>('input')).find(el=>!el.checkValidity());
+    form.querySelectorAll('[aria-invalid]').forEach(el=>el.removeAttribute('aria-invalid'));
+    if(invalid){invalid.setAttribute('aria-invalid','true');status.textContent=`${invalid.labels?.[0]?.firstChild?.textContent||'入力内容'}を確認してください。`;status.focus();return;}
+    status.textContent='入力ありがとうございます。デモのため送信はされません。実際のサイトでは、ここで担当者に通知が届きます。';
+    status.focus();
+  });
+}
+</script>

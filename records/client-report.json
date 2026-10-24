@@ -1,0 +1,50 @@
+[
+  {
+    "id": "demo-editorial",
+    "path": "/Users/t.ky/Documents/ChatGPT/サイト制作サービス/clients/demo-editorial",
+    "status": "draft",
+    "revision": "c21b4fb3e3c93c033052",
+    "presetId": "editorial",
+    "url": null,
+    "domainExpiry": null,
+    "lastPublished": null,
+    "engineVersion": "0.1.0",
+    "updatedAt": "2026-10-19T03:26:31.190Z",
+    "lastChecked": null,
+    "issues": [
+      "フォーム未接続"
+    ]
+  },
+  {
+    "id": "demo-photographic",
+    "path": "/Users/t.ky/Documents/ChatGPT/サイト制作サービス/clients/demo-photographic",
+    "status": "draft",
+    "revision": "2337bd38f92002b8df5d",
+    "presetId": "photographic",
+    "url": null,
+    "domainExpiry": null,
+    "lastPublished": null,
+    "engineVersion": "0.1.0",
+    "updatedAt": "2026-10-19T03:26:31.200Z",
+    "lastChecked": null,
+    "issues": [
+      "フォーム未接続"
+    ]
+  },
+  {
+    "id": "demo-structured",
+    "path": "/Users/t.ky/Documents/ChatGPT/サイト制作サービス/clients/demo-structured",
+    "status": "draft",
+    "revision": "78ce9cd85220fb380649",
+    "presetId": "structured",
+    "url": null,
+    "domainExpiry": null,
+    "lastPublished": null,
+    "engineVersion": "0.1.0",
+    "updatedAt": "2026-10-19T03:26:31.207Z",
+    "lastChecked": null,
+    "issues": [
+      "フォーム未接続"
+    ]
+  }
+]

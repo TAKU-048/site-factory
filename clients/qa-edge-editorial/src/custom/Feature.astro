@@ -1,0 +1,6 @@
+---
+interface Props { heading?:string;body?:string }
+const {heading,body}=Astro.props;
+---
+{(heading||body)&&<aside class="custom-feature"><span class="custom-mark" aria-hidden="true">＋</span>{heading&&<h2>{heading}</h2>}{body&&<p>{body}</p>}</aside>}
+<style>.custom-feature{border-block:2px solid var(--ink);padding:48px 0;display:grid;grid-template-columns:64px 1fr;gap:16px}.custom-feature h2{font-size:clamp(24px,4vw,42px);margin:0}.custom-feature p{grid-column:2;max-width:38em}.custom-mark{font-size:48px;line-height:1}@media(max-width:600px){.custom-feature{grid-template-columns:32px 1fr;padding:32px 0}.custom-mark{font-size:32px}}</style>

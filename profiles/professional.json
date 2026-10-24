@@ -1,0 +1,1 @@
+{"id":"professional","name":"士業","required":["company.name","company.description","company.email"],"questions":["資格・登録と確認資料","実際に対応できる業務範囲","顧客の相談場面","相談から依頼までの流れ","報酬の案内方法"],"suggestedPages":["services","approach","company","contact"],"cautions":["資格・業務範囲・専門的主張を推測で補完しない","顧客情報を同意なく事例にしない"]}

@@ -1,0 +1,1 @@
+{"id":"restaurant","name":"飲食店","required":["company.name","company.description"],"questions":["看板メニューと価格","営業時間・定休日","席数・予約の可否","支払い方法","アクセス（最寄り駅・駐車場）","料理写真と店内写真の掲載許可","アレルギー表示の方針"],"suggestedPages":["menu","story","shop"],"cautions":["価格・営業時間は顧客の最新情報を確認","アレルギー・原産地の表示は顧客資料に基づく","口コミ・ランキング・受賞歴を作らない"]}

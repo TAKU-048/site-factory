@@ -1,0 +1,12 @@
+// 営業用デモ demo-build-recruit の公開設定（2026-10-21）。誰でも閲覧できる（認証なし）とユーザー決定済み。
+// 公開URL: https://demo-build-recruit.tk-sites.workers.dev ／ 中身は clients/demo-build-recruit/dist（npm run build の出力）
+{
+  "name": "demo-build-recruit",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "../../clients/demo-build-recruit/dist",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": false
+}

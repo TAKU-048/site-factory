@@ -1,0 +1,22 @@
+---
+import site from '../data/site.json';
+import {siteLinks} from '../lib/links';
+const links=siteLinks(site.pages);
+import '../styles/site.css';
+import '../custom/client.css';
+interface Props {title:string;description:string;slug?:string}
+const {title,description,slug=''}=Astro.props;
+const canonical=new URL(slug?`/${slug}/`:'/',Astro.site);
+const design=site.design;
+const tokens=Object.entries(design.tokens).map(([k,v])=>`--${k}:${v}`).join(';');
+const nav=site.pages.filter(p=>p.slug!==''&&p.slug!=='privacy');
+const logo=site.assets.find(a=>a.id===(site.company as {logoId?:string}).logoId);
+---
+<!doctype html><html lang="ja"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title} | {site.company.name}</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/><meta property="og:title" content={`${title} | ${site.company.name}`}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={canonical}/><meta name="robots" content="noindex, nofollow"/><meta name="theme-color" content={design.tokens.paper}/></head>
+<body data-design={design.id} style={tokens}>
+<a class="skip-link" href="#main">本文へ移動</a>
+{site.demo&&<div class="demo-notice">制作システムの検証用デモです。実在の企業・施工実績を示すものではありません。</div>}
+<header class="site-header"><a class="brand" href="/" aria-label={`${site.company.name} ホーム`}>{logo&&<img src={`/assets/${logo.path}`} width="40" height="40" alt=""/>}<span>{site.company.name.replace('（制作デモ）','').replace('（デモ）','')}</span></a><nav aria-label="メインナビゲーション">{nav.map(p=><a href={`/${p.slug}/`} aria-current={p.slug===slug?'page':undefined}>{p.title}</a>)}</nav></header>
+<main id="main"><slot/></main>
+<footer class="site-footer"><div><a class="footer-brand" href="/">{site.company.name}</a><p>{site.company.tagline}</p></div><div class="footer-links">{links.contact&&<a href={links.contact}>お問い合わせ</a>}{links.privacy&&<a href={links.privacy}>プライバシーポリシー</a>}<a href="#main">ページ上部へ</a></div><p class="footer-note">{site.demo?'DESIGN SYSTEM STUDY — 制作検証用':'© '+site.company.name}</p></footer>
+</body></html>

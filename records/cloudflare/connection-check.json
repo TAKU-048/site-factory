@@ -1,0 +1,12 @@
+{
+  "checkedOn": "2026-10-19",
+  "transport": "official Cloudflare API MCP",
+  "account": {"id":"5b50bcf6ba35aacc7df65bfd63955be4","name":"Takuma.yamaura@gmail.com's Account"},
+  "accounts": {"httpStatus":200,"count":1,"totalPages":1},
+  "workers": {"httpStatus":200,"count":0,"scripts":[]},
+  "d1": {"httpStatus":200,"count":0,"databases":[],"totalCount":0},
+  "workersDevSubdomain": {"configured":false,"apiErrorCode":10007},
+  "workersSettings": {"httpStatus":200,"defaultUsageModel":"standard","paidSubscriptionVerified":false},
+  "subscriptions": {"verified":false,"apiErrorCode":10000,"note":"現認証では契約情報の参照に失敗。Workers一覧等の参照成功とは区別する。"},
+  "mutationsPerformed": false
+}

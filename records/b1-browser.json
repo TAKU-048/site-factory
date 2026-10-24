@@ -1,0 +1,41 @@
+{
+  "formEvidence": [
+    {
+      "focused": "form-status",
+      "retained": 21,
+      "scrollWidth": 360,
+      "state": "storage-failure",
+      "status": "受付できませんでした。入力を残したまま再送してください。",
+      "width": 360
+    },
+    {
+      "focused": "form-status",
+      "retained": 21,
+      "state": "expired-token",
+      "status": "認証を更新して再送してください。"
+    },
+    {
+      "cleared": true,
+      "focused": "form-status",
+      "state": "accepted",
+      "status": "お問い合わせを受け付けました。受付番号：4c83dff3-fece-4726-99a6-97a9b04d866e"
+    }
+  ],
+  "layoutEvidence": [
+    {
+      "scrollWidth": 360,
+      "small": [],
+      "width": 360
+    },
+    {
+      "scrollWidth": 375,
+      "small": [],
+      "width": 375
+    },
+    {
+      "scrollWidth": 1280,
+      "small": [],
+      "width": 1280
+    }
+  ]
+}

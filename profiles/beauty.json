@@ -1,0 +1,1 @@
+{"id":"beauty","name":"美容室・サロン","required":["company.name","company.description"],"questions":["メニューと料金（税込表示）","予約方法（電話・予約サイト・フォーム）","営業時間・定休日","得意なスタイル・施術","スタイル写真の掲載許可（モデルの同意）","駐車場・アクセス"],"suggestedPages":["menu","style","salon","reserve"],"cautions":["スタイル写真はモデルの掲載同意を確認","効果・効能を断定しない（薬機法）","口コミ・人気ランキングを作らない"]}

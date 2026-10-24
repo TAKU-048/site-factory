@@ -1,0 +1,25 @@
+node_modules/
+.cache/
+.astro/
+dist/
+vendor/
+# clients/ は 2026-10-24 から管理対象（node_modules・dist・.astro は上の規則で除外）
+clients/*/.wrangler/
+exports/
+records/test-runs/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.local-state/
+.candidate-state/
+.wrangler/
+runtime/cloudflare/build/
+releases/
+
+.claude/settings.local.json
+
+# 2026-10-24 追加
+.gitignore.bak-*
+.mcp.json.local

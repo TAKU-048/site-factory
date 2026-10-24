@@ -1,0 +1,173 @@
+---
+// デイサービス こもれび舎（制作デモ）専用のセクション描画。データは共通エンジンの site.json（type / variant / items / imageId）。
+import ContactForm from './ContactForm.astro';
+import {itemImages,asset,srcset,parts,splitTime} from '../custom/media';
+interface Props {section:{id:string;type:string;variant?:string;heading?:string;body?:string;items?:{title:string;body:string}[];imageId?:string};first?:boolean}
+const {section:s,first=false}=Astro.props;
+const image=asset(s.imageId);
+const imgs=(itemImages[s.id]||[]).map(asset);
+const v=s.variant||'default';
+const H=first?'h1':'h2';
+const lines=(t?:string)=>(t||'').split('\n');
+const pad=(i:number)=>String(i+1);
+const leaf='M0 0C14-20 46-22 64 0C46 22 14 20 0 0Z';
+// 木漏れ日の葉（ヒーローの上に落ちる影）
+const leaves=[[80,40,-20,1],[150,10,15,.8],[40,110,35,.9],[210,70,-40,1.1],[120,140,5,.7],[260,20,60,.9],[300,110,-10,1],[190,170,-55,.8],[20,190,25,1],[330,190,40,.75]];
+const seasonsMotif=['spring','summer','autumn','winter'];
+const fall=Array.from({length:14},(_,i)=>({l:(i*73)%100,d:(i*1.3)%9,t:9+(i*7)%6,s:.7+((i*37)%50)/100}));
+// アイコン（線で描く。画面に入ると線が引かれる）
+const icons=[
+ '<path d="M6 30h36v-8l-6-10H18l-6 10H6z M12 22h30" pathLength="1"/><circle cx="14" cy="32" r="4" pathLength="1"/><circle cx="34" cy="32" r="4" pathLength="1"/>',
+ '<path d="M12 6h22a4 4 0 0 1 4 4v30H16a4 4 0 0 1-4-4z M12 36a4 4 0 0 1 4-4h22 M19 14h12 M19 20h12" pathLength="1"/>',
+ '<path d="M24 40C10 30 6 22 6 16a9 9 0 0 1 18-3 9 9 0 0 1 18 3c0 6-4 14-18 24z M14 21h6l3-5 4 9 3-4h5" pathLength="1"/>',
+ '<path d="M14 6l6 8-4 5c2 5 6 9 11 11l5-4 8 6-4 7C22 38 10 26 7 11z" pathLength="1"/>'
+];
+---
+{s.type==='hero'?(
+<section class="hero" aria-labelledby="hero-title">
+  <div class="light" aria-hidden="true" data-motion><i></i><i></i><i></i><i></i><i></i></div>
+  <svg class="leaves" viewBox="0 0 400 240" aria-hidden="true" data-motion>{leaves.map(([x,y,r,sc],i)=><g transform={`translate(${x} ${y}) rotate(${r}) scale(${sc})`}><path class="lf" style={`--i:${i}`} d={leaf}/></g>)}</svg>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="hero-kicker">デイサービス こもれび舎</p>
+      <h1 id="hero-title">{lines(s.heading).map((l,i)=><span class="line" style={`--i:${i}`}>{l}</span>)}</h1>
+      <svg class="hero-underline" viewBox="0 0 320 24" aria-hidden="true"><path d="M4 16C60 6 120 20 180 12S280 6 316 14" pathLength="1"/></svg>
+      <p class="hero-body">{s.body}</p>
+      <div class="hero-actions"><a class="button" href="/contact/">見学を申し込む</a><a class="link" href="/day/">1日の過ごし方を見る</a></div>
+    </div>
+    <figure class="window">
+      {image&&<img src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 900px) 80vw, 40vw" alt={image.alt} width="1067" height="1600" fetchpriority="high"/>}
+      <span class="window-glow" aria-hidden="true"></span>
+      <figcaption>写真はイメージです</figcaption>
+    </figure>
+  </div>
+  <button type="button" class="motion-toggle" data-motion-toggle aria-pressed="false">光と葉の動きを止める</button>
+</section>
+):s.type==='intro'&&v==='welcome'?(
+<section class="section welcome" id={s.id}>
+  <div class="wrap welcome-grid">
+    {image&&<figure class="round-window" data-reveal><img src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 900px) 70vw, 36vw" alt={image.alt} width="1600" height="1102" loading="lazy"/></figure>}
+    <div class="welcome-text" data-reveal><h2 class="eyebrow">{s.heading}</h2>{lines(s.body).map((l,i)=>i===0?<p class="welcome-quote">{l}</p>:<p>{l}</p>)}<a class="link" href="/service/">ご利用について</a></div>
+  </div>
+</section>
+):s.type==='process'&&v==='sun-day'?(
+<section class="section sunday" id={s.id} data-sunday>
+  <div class="wrap sunday-grid">
+    <div class="sky-col">
+      <div class="sky" data-sky>
+        <svg viewBox="0 0 400 236" class="sky-svg" aria-hidden="true">
+          <path class="arc" d="M30 206A170 170 0 0 1 370 206"/>
+          <g class="sun" data-sun transform="translate(30 206)"><g class="rays"><path d="M0-40v-10M0 40v10M-40 0h-10M40 0h10M28-28l7-7M-28 28l-7 7M28 28l7 7M-28-28l-7-7"/></g><circle r="24" class="sun-core"/></g>
+          <path class="house" d="M150 206v-34l50-30 50 30v34z"/><path class="house-roof" d="M138 176l62-40 62 40"/><rect class="house-win" x="186" y="180" width="28" height="26" rx="3"/>
+          <path class="ground" d="M0 206h400"/>
+        </svg>
+        <p class="sky-now"><span class="sky-time" data-sky-time>8:30</span><span data-sky-label>お迎え</span></p>
+      </div>
+    </div>
+    <div class="day-col">
+      <div class="section-head" data-reveal><h2>{s.heading}</h2>{s.body&&<p class="lead">{s.body}</p>}</div>
+      <ol class="sun-list">{s.items?.map((item,i)=>{const t=splitTime(item.title);return <li data-step={i} data-time={t.time} data-label={t.label}><span class="sl-time">{t.time}</span><div><h3>{t.label}</h3><p>{item.body}</p></div></li>})}</ol>
+    </div>
+  </div>
+</section>
+):s.type==='projects'?(
+<section class="section moments" id={s.id}>
+  <div class="wrap"><div class="section-head center" data-reveal><h2>{s.heading}</h2></div>
+  <ul class="polaroids">{s.items?.map((item,i)=>{const im=imgs[i];return <li class="polaroid" data-reveal style={`--i:${i};--r:${[-3,2.2,-1.8,3][i%4]}deg`}><figure><span class="pol-photo">{im&&<img src={`/assets/${im.path}`} srcset={srcset(im.path)} sizes="(max-width: 900px) 80vw, 24vw" alt={im.alt} width="800" height="600" loading="lazy"/>}</span><figcaption><span class="pol-title">{item.title}</span><span class="pol-text">{item.body}</span></figcaption></figure></li>})}</ul>
+  {s.body&&<p class="note center">{s.body}</p>}</div>
+</section>
+):s.type==='strengths'&&v==='family'?(
+<section class="section family" id={s.id}>
+  <div class="wrap"><div class="section-head center" data-reveal><h2>{s.heading}</h2></div>
+  <ul class="family-list">{s.items?.map((item,i)=><li data-reveal style={`--i:${i}`}><svg class="icon" viewBox="0 0 48 48" aria-hidden="true" set:html={icons[i%icons.length]}></svg><h3>{item.title}</h3><p>{item.body}</p></li>)}</ul></div>
+</section>
+):s.type==='cta'?(
+<section class={`engawa engawa--${v}`} id={s.id}>
+  <div class="wrap engawa-inner">
+    <div class="engawa-text" data-reveal><h2>{lines(s.heading).map(l=><span class="block">{l}</span>)}</h2>{s.body&&<p>{s.body}</p>}
+      <div class="cta-actions">{v==='entry'?<a class="button" href="/contact/?kind=recruit">見学を申し込む</a>:<a class="button" href="/contact/">見学・相談を申し込む</a>}</div></div>
+    <div class="teacup" aria-hidden="true" data-reveal>
+      <svg viewBox="0 0 200 200"><g class="steam" data-motion><path d="M78 92c-10-14 8-22-2-38"/><path d="M100 88c-10-16 10-24 0-44"/><path d="M122 92c-10-14 8-22-2-38"/></g><path class="cup" d="M52 104h96c0 34-18 56-48 56s-48-22-48-56z"/><path class="saucer" d="M30 166c20 10 120 10 140 0"/><path class="handle" d="M146 114c22-2 22 26-4 26"/></svg>
+    </div>
+  </div>
+  <div class="floor" aria-hidden="true"></div>
+</section>
+):s.type==='intro'&&v==='recruit-head'?(
+<section class="page-head page-head--recruit" id={s.id}>
+  <div class="wrap page-head-grid">
+    <div class="page-head-text" data-reveal><p class="eyebrow">職員募集</p><H class="page-title">{lines(s.heading).map(l=><span class="block">{l}</span>)}</H>{s.body&&<p class="page-lead">{s.body}</p>}</div>
+    {image&&<figure class="arch" data-reveal><img src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 900px) 70vw, 36vw" alt={image.alt} width="1067" height="1600" fetchpriority="high"/></figure>}
+  </div>
+</section>
+):s.type==='intro'?(
+<section class={`page-head ${image?'page-head--photo':''}`} id={s.id}>
+  <div class="wrap page-head-grid">
+    <div class="page-head-text" data-reveal><H class="page-title">{s.heading}</H>{s.body&&<p class="page-lead">{s.body}</p>}</div>
+    {image&&<figure class="arch" data-reveal><img src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 900px) 70vw, 36vw" alt={image.alt} width="1600" height="1067" fetchpriority="high"/></figure>}
+  </div>
+</section>
+):s.type==='prose'&&image?(
+<section class="section meal" id={s.id}>
+  <div class="wrap meal-grid">
+    <figure class="meal-photo" data-reveal><img src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 900px) 90vw, 50vw" alt={image.alt} width="1600" height="1066" loading="lazy"/></figure>
+    <div class="meal-text" data-reveal><h2>{s.heading}</h2>{lines(s.body).map(l=><p>{l}</p>)}</div>
+  </div>
+</section>
+):s.type==='services'&&v==='activities'?(
+<section class="section activities" id={s.id}>
+  <div class="wrap"><div class="section-head center" data-reveal><h2>{s.heading}</h2></div>
+  <ul class="act-list">{s.items?.map((item,i)=>{const p=parts(item.body);const im=asset(p.rest[0]);return <li data-reveal style={`--i:${i}`}><span class={`blob blob--${i%3}`}>{im&&<img src={`/assets/${im.path}`} srcset={srcset(im.path)} sizes="(max-width: 900px) 80vw, 30vw" alt={im.alt} width="800" height="600" loading="lazy"/>}</span><h3>{item.title}</h3><p>{p.text}</p></li>})}</ul></div>
+</section>
+):s.type==='custom'&&v==='seasons'?(
+<section class="section seasons" id={s.id} data-seasons data-season="spring">
+  <div class="fall" aria-hidden="true" data-motion>{fall.map(f=><i style={`left:${f.l}%;animation-delay:-${f.d}s;animation-duration:${f.t}s;--s:${f.s}`}></i>)}</div>
+  <div class="wrap narrow seasons-inner">
+    <div class="section-head center" data-reveal><h2>{s.heading}</h2>{s.body&&<p class="lead">{s.body}</p>}</div>
+    <div class="season-tabs" role="group" aria-label="季節を選ぶ">{s.items?.map((item,i)=><button type="button" data-season-btn={seasonsMotif[i]} aria-pressed={i===0?'true':'false'}>{item.title}</button>)}</div>
+    <div class="season-panels" aria-live="polite">{s.items?.map((item,i)=><div class="season-panel" data-season-panel={seasonsMotif[i]} hidden={i!==0}><span class="season-kanji" aria-hidden="true" data-k={item.title}></span><p class="season-text">{item.body}</p></div>)}</div>
+    <button type="button" class="motion-toggle motion-toggle--inline" data-motion-toggle aria-pressed="false">舞う動きを止める</button>
+  </div>
+</section>
+):s.type==='process'?(
+<section class="section steps" id={s.id}>
+  <div class="wrap"><div class="section-head center" data-reveal><h2>{s.heading}</h2></div>
+  <div class="stones-wrap" data-reveal>
+    <svg class="stones-path" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M120 60C240 0 300 120 380 60S540 0 620 60 780 120 880 60" pathLength="1"/></svg>
+    <ol class="stones">{s.items?.map((item,i)=><li style={`--i:${i}`}><span class="stone">{pad(i)}</span><h3>{item.title}</h3><p>{item.body}</p></li>)}</ol>
+  </div></div>
+</section>
+):s.type==='company'&&v==='fee'?(
+<section class="section fee" id={s.id}>
+  <div class="wrap narrow"><div class="fee-card" data-reveal><h2>{s.heading}</h2>
+  <dl class="info-list">{s.items?.map(item=><div><dt>{item.title}</dt><dd>{item.body}</dd></div>)}</dl>
+  {s.body&&<p class="note">{s.body}</p>}</div></div>
+</section>
+):s.type==='faq'?(
+<section class="section faq" id={s.id}>
+  <div class="wrap narrow"><h2 class="center" data-reveal>{s.heading}</h2>
+  <div class="faq-list">{s.items?.map(item=><details data-reveal><summary><span class="qa q" aria-hidden="true">Q</span><span>{item.title}</span></summary><p><span class="qa a" aria-hidden="true">A</span><span>{item.body}</span></p></details>)}</div></div>
+</section>
+):s.type==='services'&&v==='jobs'?(
+<section class="section jobs" id={s.id}>
+  <div class="wrap"><div class="section-head center" data-reveal><h2>{s.heading}</h2></div>
+  <ul class="job-list">{s.items?.map((item,i)=>{const p=parts(item.body);return <li class="job" data-reveal style={`--i:${i}`}><h3>{item.title}</h3><p>{p.text}</p><ul class="tags">{p.rest.map(t=><li>{t}</li>)}</ul></li>})}</ul></div>
+</section>
+):s.type==='strengths'?(
+<section class="section workplace" id={s.id}>
+  <div class="wrap"><div class="section-head center" data-reveal><h2>{s.heading}</h2></div>
+  <ul class="leaf-list">{s.items?.map((item,i)=><li data-reveal style={`--i:${i}`}><svg class="leaf-bullet" viewBox="-4 -26 72 52" aria-hidden="true"><path d={leaf}/></svg><div><h3>{item.title}</h3><p>{item.body}</p></div></li>)}</ul></div>
+</section>
+):s.type==='company'?(
+<section class="section info" id={s.id}>
+  <div class="wrap narrow"><h2 data-reveal>{s.heading}</h2>
+  <dl class="info-list" data-reveal>{s.items?.map(item=><div><dt>{item.title}</dt><dd>{item.body}</dd></div>)}</dl></div>
+</section>
+):s.type==='form'?(
+<section class="section form-section" id={s.id}>
+  <div class="wrap narrow"><h2>{s.heading}</h2><ContactForm/></div>
+</section>
+):(
+<section class="section prose" id={s.id}>
+  <div class="wrap narrow"><H data-reveal>{s.heading}</H>{s.body&&<p class="prose-body">{s.body}</p>}</div>
+</section>
+)}

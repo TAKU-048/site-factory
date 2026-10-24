@@ -1,0 +1,41 @@
+---
+// デモ専用フォーム：入力・確認はできるが、どこにも送信しない（通信処理を持たない）。
+// 「職員応募」を選んだときは、ご本人との関係の欄を隠し、文言を応募向けに変える。
+const kinds=[{v:'visit',l:'見学・体験'},{v:'consult',l:'ご利用の相談'},{v:'recruit',l:'職員の応募'}];
+---
+<form class="demo-form" data-demo-form novalidate aria-describedby="demo-form-note">
+  <p id="demo-form-note" class="form-note">デモのため、入力内容はどこにも送信・保存されません。</p>
+  <fieldset class="kind">
+    <legend>ご用件<span class="req">必須</span></legend>
+    <div class="kind-options">{kinds.map((k,i)=><label class="kind-option"><input type="radio" name="kind" value={k.v} checked={i===0} required/><span>{k.l}</span></label>)}</div>
+  </fieldset>
+  <div class="form-row"><label for="f-name">お名前<span class="req">必須</span></label><input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100"/></div>
+  <div class="form-row" data-relation><label for="f-relation">ご本人との関係<span class="opt">任意</span></label><input id="f-relation" name="relation" type="text" maxlength="50" aria-describedby="h-relation"/><p class="hint" id="h-relation">例：長女、本人、担当ケアマネジャー</p></div>
+  <div class="form-row"><label for="f-phone">電話番号<span class="opt">任意</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="20" aria-describedby="h-phone"/><p class="hint" id="h-phone">お電話でのご連絡を希望される方はご記入ください。</p></div>
+  <div class="form-row"><label for="f-email">メールアドレス<span class="req">必須</span></label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="254"/></div>
+  <div class="form-row"><label for="f-date" data-date-label>見学のご希望日<span class="opt">任意</span></label><input id="f-date" name="date" type="text" maxlength="200" aria-describedby="h-date"/><p class="hint" id="h-date">例：10月28日の午前、30日の午後（第3希望まで）</p></div>
+  <div class="form-row"><label for="f-message">ご相談内容<span class="opt">任意</span></label><textarea id="f-message" name="message" rows="5" maxlength="2000" aria-describedby="h-message"></textarea><p class="hint" id="h-message">お体の様子や、気になっていることがあればお書きください。</p></div>
+  <button type="submit" class="button">内容を確認する</button>
+  <p class="form-status" role="status" aria-live="polite" tabindex="-1" data-status></p>
+</form>
+<script>
+for(const form of document.querySelectorAll<HTMLFormElement>('form[data-demo-form]')){
+  const status=form.querySelector<HTMLElement>('[data-status]')!;
+  const relation=form.querySelector<HTMLElement>('[data-relation]')!;
+  const dateLabel=form.querySelector<HTMLElement>('[data-date-label]')!;
+  const msgHint=form.querySelector<HTMLElement>('#h-message')!;
+  const sync=()=>{const k=(form.querySelector<HTMLInputElement>('input[name=kind]:checked')||{value:'visit'}).value;relation.hidden=k==='recruit';dateLabel.firstChild!.textContent=k==='recruit'?'見学のご希望日（職場見学）':k==='consult'?'ご連絡のつきやすい日時':'見学のご希望日';msgHint.textContent=k==='recruit'?'これまでの経験や資格、希望の勤務日数などをお書きください。':'お体の様子や、気になっていることがあればお書きください。';};
+  const kind=new URLSearchParams(location.search).get('kind');
+  if(kind){const r=form.querySelector<HTMLInputElement>(`input[name=kind][value="${CSS.escape(kind)}"]`);if(r)r.checked=true;}
+  sync();
+  form.addEventListener('change',(e)=>{if((e.target as HTMLInputElement).name==='kind')sync();});
+  form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    form.querySelectorAll('[aria-invalid]').forEach(el=>el.removeAttribute('aria-invalid'));
+    const invalid=Array.from(form.querySelectorAll<HTMLInputElement>('input:not([type=radio])')).find(el=>!el.checkValidity());
+    if(invalid){invalid.setAttribute('aria-invalid','true');status.textContent=`${invalid.labels?.[0]?.firstChild?.textContent||'入力内容'}を確認してください。`;status.focus();return;}
+    status.textContent='ありがとうございます。デモのため送信はされません。実際のサイトでは、ここで事業所に通知が届き、職員からご連絡します。';
+    status.focus();
+  });
+}
+</script>

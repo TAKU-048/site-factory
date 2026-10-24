@@ -1,0 +1,322 @@
+{
+  "company": {
+    "name": "杣建築工房（制作デモ）",
+    "tagline": "木と石と、\n光の通り道をつくる。",
+    "description": "素材の手ざわりと、季節ごとの光を大切にする注文住宅の工務店です。\n施工事例を中心に見せるホームページの見本として作った、架空の会社のデモです。",
+    "email": "demo@example.com",
+    "phone": "",
+    "address": "デモのため所在地は掲載していません（想定：神奈川県西部）。",
+    "philosophy": "長く住むほど、よくなる家を。",
+    "website": "https://example.invalid"
+  },
+  "industry": "construction",
+  "demo": true,
+  "factsConfirmed": true,
+  "assets": [
+    {
+      "id": "works-hero",
+      "path": "works-hero.webp",
+      "alt": "木の格子と石張りの壁を組み合わせた二階建ての住宅の外観",
+      "permitted": true,
+      "source": "Photo: Alef Morais / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "works-facade",
+      "path": "works-facade.webp",
+      "alt": "芝生の庭と石畳のアプローチの先に建つ、木の外壁の住宅",
+      "permitted": true,
+      "source": "Photo: Alef Morais / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "works-living",
+      "path": "works-living.webp",
+      "alt": "天井と壁を木で仕上げた、明るい窓のあるリビング",
+      "permitted": true,
+      "source": "Photo: Caroline Badran / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "works-kitchen",
+      "path": "works-kitchen.webp",
+      "alt": "木の収納と大きな窓が並ぶ細長いキッチン",
+      "permitted": true,
+      "source": "Photo: João Emanuel / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "works-stair",
+      "path": "works-stair.webp",
+      "alt": "木の壁に沿って上がる鉄骨の階段とロフト",
+      "permitted": true,
+      "source": "Photo: Caroline Badran / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "works-dining",
+      "path": "works-dining.webp",
+      "alt": "三角屋根の大きなガラス窓から森が見えるダイニング",
+      "permitted": true,
+      "source": "Photo: Polina Kuzovkova / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "works-garden-room",
+      "path": "works-garden-room.webp",
+      "alt": "木の天井の下、大きな開口から庭と池を眺める部屋",
+      "permitted": true,
+      "source": "Photo: A. L. Brown / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "works-snow",
+      "path": "works-snow.webp",
+      "alt": "雪の中に建つ、赤と黒の外壁の住宅",
+      "permitted": true,
+      "source": "Photo: mark wang / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "works-wall",
+      "path": "works-wall.webp",
+      "alt": "焼いた杉板の外壁に並ぶ二つの窓",
+      "permitted": true,
+      "source": "Photo: Yanhao Fang / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "craft-tools",
+      "path": "craft-tools.webp",
+      "alt": "陽の差す作業場の作業台に並ぶ木工の道具",
+      "permitted": true,
+      "source": "Photo: HENG YIN / Unsplash（Unsplash License）"
+    }
+  ],
+  "form": {
+    "connected": false,
+    "fields": [
+      "name",
+      "email",
+      "phone",
+      "message"
+    ]
+  },
+  "pages": [
+    {
+      "slug": "",
+      "title": "注文住宅とリノベーション",
+      "description": "木と石、光を大切にする注文住宅の工務店。施工事例を中心に見せるホームページの見本として作った、架空の会社のデモです。",
+      "sections": [
+        {
+          "id": "hero",
+          "type": "hero",
+          "variant": "vertical",
+          "heading": "木と石と、\n光の通り道をつくる。",
+          "body": "素材の手ざわりと、季節ごとの光。長く住むほど、よくなる家を考えています。",
+          "imageId": "works-hero"
+        },
+        {
+          "id": "pickup",
+          "type": "projects",
+          "variant": "pickup",
+          "heading": "施工例から",
+          "body": "写真は素材サイトのイメージで、実際の施工事例ではありません。",
+          "items": [
+            {
+              "title": "庭へひらく木と石の家",
+              "body": "新築"
+            },
+            {
+              "title": "木に包まれる居間",
+              "body": "リノベーション"
+            },
+            {
+              "title": "森を眺める食卓",
+              "body": "新築"
+            }
+          ]
+        },
+        {
+          "id": "thinking",
+          "type": "intro",
+          "variant": "split",
+          "heading": "図面の前に、暮らしを聞く。",
+          "body": "朝日が入る場所、雨の日の過ごし方、二十年後の家族のかたち。\n間取りを描く前に、まず暮らしのことをゆっくり伺います。",
+          "imageId": "craft-tools"
+        },
+        {
+          "id": "flow",
+          "type": "process",
+          "variant": "flow",
+          "heading": "家づくりの進め方",
+          "items": [
+            {
+              "title": "相談",
+              "body": "ご要望や予算、土地のことを伺います。"
+            },
+            {
+              "title": "提案",
+              "body": "敷地を見て、間取りと概算の費用をご提案します。"
+            },
+            {
+              "title": "設計",
+              "body": "素材や設備を一緒に選び、図面を仕上げます。"
+            },
+            {
+              "title": "工事",
+              "body": "着工後も現場でいつでも確認していただけます。"
+            },
+            {
+              "title": "お引き渡し",
+              "body": "引き渡し後も定期的に点検に伺います。"
+            }
+          ]
+        },
+        {
+          "id": "cta",
+          "type": "cta",
+          "variant": "quiet",
+          "heading": "まずは、施工例を見に来ませんか。",
+          "body": "完成した家の見学や、土地探しからのご相談も受け付けています。"
+        }
+      ]
+    },
+    {
+      "slug": "works",
+      "title": "施工例",
+      "description": "新築とリノベーションの施工例。写真は素材サイトのイメージで、実際の施工事例ではありません。",
+      "sections": [
+        {
+          "id": "works-intro",
+          "type": "intro",
+          "heading": "施工例",
+          "body": "建てる場所も、住む人も、ひとつとして同じ家はありません。\n※ デモのため、写真は素材サイトのイメージで、実際の施工事例ではありません。"
+        },
+        {
+          "id": "works-list",
+          "type": "projects",
+          "variant": "gallery",
+          "heading": "施工例の一覧",
+          "items": [
+            {
+              "title": "庭へひらく木と石の家",
+              "body": "新築|芝生の庭に向かって大きく開いた、木と石の家。軒を深く出して、夏の日差しをやわらげています。"
+            },
+            {
+              "title": "木に包まれる居間",
+              "body": "リノベーション|築30年の住まいの天井と壁を張り替え、木に包まれる居間に。"
+            },
+            {
+              "title": "窓辺の台所",
+              "body": "リノベーション|細長い台所を、窓に沿って作業できる明るい場所に変えました。"
+            },
+            {
+              "title": "ロフトのある書斎",
+              "body": "リノベーション|天井を抜いてロフトをつくり、階段下を本棚に。"
+            },
+            {
+              "title": "森を眺める食卓",
+              "body": "新築|三角屋根の大きな窓から、季節ごとの森を眺める食卓。"
+            },
+            {
+              "title": "池を望む離れ",
+              "body": "新築|母屋とは別に建てた、庭と池を眺めるための小さな離れ。"
+            },
+            {
+              "title": "雪国の赤い家",
+              "body": "新築|雪に映える外壁の色を、ご家族と一緒に選びました。"
+            },
+            {
+              "title": "焼杉の外壁",
+              "body": "リノベーション|外壁を焼杉に張り替え、年月とともに味わいが増す家に。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "approach",
+      "title": "家づくりの考え方",
+      "description": "素材、光、長く住むこと。杣建築工房（架空）の家づくりの考え方です。",
+      "sections": [
+        {
+          "id": "approach-intro",
+          "type": "intro",
+          "heading": "家づくりの考え方",
+          "body": "派手さよりも、十年後、二十年後に「この家でよかった」と思えることを大切にしています。"
+        },
+        {
+          "id": "principles",
+          "type": "strengths",
+          "variant": "principles",
+          "heading": "大切にしている三つのこと",
+          "items": [
+            {
+              "title": "素材",
+              "body": "無垢の木、左官の壁、石。手で触れたときの感触と、古びていく姿まで考えて選びます。"
+            },
+            {
+              "title": "光",
+              "body": "季節によって変わる太陽の角度を図面に描き込み、窓の位置と大きさを決めます。"
+            },
+            {
+              "title": "手入れ",
+              "body": "自分で手入れできる仕上げを選び、住みながら直せる家にします。"
+            }
+          ]
+        },
+        {
+          "id": "craft",
+          "type": "prose",
+          "variant": "photo-story",
+          "heading": "作業場から",
+          "body": "柱や梁の一部は、自社の作業場で刻んでいます。大工が材料の癖を見て、使う場所を決めます。",
+          "imageId": "craft-tools"
+        },
+        {
+          "id": "approach-cta",
+          "type": "cta",
+          "variant": "quiet",
+          "heading": "考え方に共感していただけたら。",
+          "body": "まずは今の住まいのこと、これからの暮らしのことをお聞かせください。"
+        }
+      ]
+    },
+    {
+      "slug": "company",
+      "title": "会社案内",
+      "description": "杣建築工房（架空）の会社概要です。",
+      "sections": [
+        {
+          "id": "company-info",
+          "type": "company",
+          "heading": "会社案内",
+          "body": "デモのため、所在地・許可番号などは掲載していません。"
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "title": "相談する",
+      "description": "家づくりの相談・見学の申し込みフォームです。デモのため送信はされません。",
+      "sections": [
+        {
+          "id": "contact-intro",
+          "type": "intro",
+          "heading": "相談する",
+          "body": "土地探しからの相談、完成した家の見学、リノベーションの相談も受け付けています。"
+        },
+        {
+          "id": "contact-form",
+          "type": "form",
+          "heading": "相談・見学の申し込み"
+        }
+      ]
+    },
+    {
+      "slug": "privacy",
+      "title": "プライバシーポリシー",
+      "description": "個人情報の取り扱いについて（デモ用の文面）。",
+      "sections": [
+        {
+          "id": "privacy-body",
+          "type": "prose",
+          "heading": "プライバシーポリシー",
+          "body": "このページはデモ用の文面です。実際の公開時は、取得する情報、利用目的、保管期間、第三者提供の有無、問い合わせ窓口を、その会社の運用に合わせて記載します。\n\nお問い合わせフォームで受け取った氏名・連絡先・内容は、ご相談への回答と連絡のためだけに使用します。"
+        }
+      ]
+    }
+  ]
+}

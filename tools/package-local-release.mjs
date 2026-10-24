@@ -1,0 +1,7 @@
+import {mkdir,copyFile,writeFile,readFile,cp} from 'node:fs/promises';import {exists,factoryRoot} from '../engine/io.ts';import {prepareRelease} from '../engine/release.ts';import path from 'node:path';
+const clientRoot=path.join(factoryRoot,'clients/qa-form-local'),dest=path.join(clientRoot,'cloudflare');if(await exists(dest))throw Error('既存の実行物は上書きしません。');await mkdir(dest);
+await copyFile(path.join(factoryRoot,'runtime/cloudflare/build/local-worker.js'),path.join(dest,'worker.js'));
+for(const name of ['package-lock.json','package.json'])await copyFile(path.join(factoryRoot,'runtime/cloudflare',name),path.join(dest,name));
+for(const name of ['src','migrations'])await cp(path.join(factoryRoot,'runtime/cloudflare',name),path.join(dest,name),{recursive:true,errorOnExist:true,force:false});
+const source=JSON.parse(await readFile(path.join(factoryRoot,'runtime/cloudflare/wrangler.local.jsonc'),'utf8'));const config={...source.vars.CONFIG,secretRevision:'local-v1'};await writeFile(path.join(dest,'local.json'),JSON.stringify(config,null,2));await writeFile(path.join(dest,'tsconfig.json'),JSON.stringify({compilerOptions:{target:'ES2023',module:'ESNext'},include:['worker.js']}));source.main='worker.js';source.assets.directory='../dist';await writeFile(path.join(dest,'wrangler.local.jsonc'),JSON.stringify(source,null,2));
+console.log(JSON.stringify(await prepareRelease({clientRoot,outputRoot:path.join(factoryRoot,'releases'),secretRevision:'local-v1'}),null,2));

@@ -1,0 +1,532 @@
+{
+  "company": {
+    "name": "株式会社朝凪運輸（制作デモ）",
+    "tagline": "荷物の先にある、\n約束まで運ぶ。",
+    "description": "2tから10tまでの貸切輸送と、関東一円の定期便、倉庫での保管を手がける運送会社です。\n運送会社のホームページの見本として作った、架空の会社のデモです。",
+    "email": "demo@example.com",
+    "phone": "",
+    "address": "デモのため所在地は掲載していません（想定：埼玉県南部、外環道の近く）。",
+    "philosophy": "時間を守ることは、相手の仕事を守ること。",
+    "website": "https://example.invalid"
+  },
+  "industry": "logistics",
+  "demo": true,
+  "factsConfirmed": true,
+  "assets": [
+    {
+      "id": "logi-hero",
+      "path": "logi-hero.webp",
+      "alt": "夜の幹線道路を走る車の光が、カーブに沿って白い線になって流れている",
+      "permitted": true,
+      "source": "Photo: 515 Freedom / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "logi-dusk",
+      "path": "logi-dusk.webp",
+      "alt": "夕暮れの郊外の道を、ライトをつけた大型トラックが走ってくる",
+      "permitted": true,
+      "source": "Photo: Josiah Farrow / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "logi-tunnel",
+      "path": "logi-tunnel.webp",
+      "alt": "照明の並ぶトンネルの中を、コンテナを積んだトラックが前を走っている",
+      "permitted": true,
+      "source": "Photo: jay huang / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "logi-warehouse",
+      "path": "logi-warehouse.webp",
+      "alt": "天井まで続く棚の間に、フォークリフトが止まっている倉庫の通路",
+      "permitted": true,
+      "source": "Photo: Kseniia Ilinykh / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "logi-racks",
+      "path": "logi-racks.webp",
+      "alt": "パレットが積まれたラックの前で、荷物を載せたフォークリフト",
+      "permitted": true,
+      "source": "Photo: AFINIS Group / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "logi-fleet",
+      "path": "logi-fleet.webp",
+      "alt": "上空から見た、駐車場に整然と並ぶトラックとトレーラー",
+      "permitted": true,
+      "source": "Photo: Nigel Tadyanehondo / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "logi-handover",
+      "path": "logi-handover.webp",
+      "alt": "段ボール箱を両手で抱えて、街の交差点で信号を待つ配達員",
+      "permitted": true,
+      "source": "Photo: Handy Wicaksono / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "logi-shelves",
+      "path": "logi-shelves.webp",
+      "alt": "奥まで続く高い棚に荷物が並ぶ、自動倉庫の通路",
+      "permitted": true,
+      "source": "Photo: Arno Senoner / Unsplash（Unsplash License）"
+    }
+  ],
+  "form": {
+    "connected": false,
+    "fields": [
+      "kind",
+      "company",
+      "name",
+      "phone",
+      "email",
+      "origin",
+      "destination",
+      "cargo",
+      "message"
+    ]
+  },
+  "pages": [
+    {
+      "slug": "",
+      "title": "輸送と倉庫のご相談",
+      "description": "2t〜10tの貸切輸送、関東一円の定期便、倉庫保管。運送会社のホームページの見本として作った、架空の会社のデモです。",
+      "sections": [
+        {
+          "id": "hero",
+          "type": "hero",
+          "variant": "route",
+          "heading": "荷物の先にある、\n約束まで運ぶ。",
+          "body": "2tから10tまでの貸切輸送と、関東一円の定期便。倉庫での保管から配送まで、ひとつの窓口でお受けします。",
+          "imageId": "logi-hero"
+        },
+        {
+          "id": "lanes",
+          "type": "services",
+          "variant": "lanes",
+          "heading": "3つの運び方",
+          "body": "荷物の量と、届ける頻度で選べます。",
+          "items": [
+            {
+              "title": "貸切輸送",
+              "body": "1台を貸し切って、積んだ荷物をそのまま届けます。急ぎの便、大きな荷物、時間指定の納品に。|logi-dusk"
+            },
+            {
+              "title": "定期便・ルート配送",
+              "body": "毎日・毎週決まった時間に、決まった納品先を回ります。店舗や工場への定期納品に。|logi-handover"
+            },
+            {
+              "title": "倉庫保管・出荷",
+              "body": "自社倉庫で荷物を預かり、ご指示に合わせて出荷します。在庫の置き場所に困ったときに。|logi-racks"
+            }
+          ]
+        },
+        {
+          "id": "area",
+          "type": "custom",
+          "variant": "route-map",
+          "heading": "関東一円へ、毎日走っています。",
+          "body": "拠点から主な地域までの、走行時間の目安です（デモのため架空の拠点です。道路状況で変わります）。",
+          "items": [
+            {
+              "title": "東京23区",
+              "body": "約40分〜"
+            },
+            {
+              "title": "横浜・川崎",
+              "body": "約70分〜"
+            },
+            {
+              "title": "千葉・幕張",
+              "body": "約70分〜"
+            },
+            {
+              "title": "さいたま・大宮",
+              "body": "約30分〜"
+            },
+            {
+              "title": "宇都宮・北関東",
+              "body": "約120分〜"
+            },
+            {
+              "title": "八王子・多摩",
+              "body": "約60分〜"
+            }
+          ]
+        },
+        {
+          "id": "trucks",
+          "type": "custom",
+          "variant": "truck-picker",
+          "heading": "荷物の量から、車の大きさを選ぶ。",
+          "body": "積める量は荷姿や重さで変わります。迷ったら、荷物の写真を送っていただければこちらで選びます。",
+          "items": [
+            {
+              "title": "2t",
+              "body": "パレット約4枚|都内の小口配送、狭い道の納品先に。"
+            },
+            {
+              "title": "4t",
+              "body": "パレット約8枚|店舗・工場への定期便に。いちばん出番の多い車です。"
+            },
+            {
+              "title": "10t",
+              "body": "パレット約16枚|拠点間の大口輸送、長距離の便に。"
+            }
+          ]
+        },
+        {
+          "id": "promise",
+          "type": "strengths",
+          "variant": "promise",
+          "heading": "荷主さまとの、4つの約束",
+          "items": [
+            {
+              "title": "時間を守る段取り",
+              "body": "渋滞の多い時間帯を避けて出発時刻を決め、到着時間から逆算して運行を組みます。"
+            },
+            {
+              "title": "遅れそうなら、先に連絡",
+              "body": "道路状況で遅れが見込まれた時点で、納品先と荷主さまの両方にお知らせします。"
+            },
+            {
+              "title": "見積もりは書面で",
+              "body": "運賃・付帯作業・待機料を分けて記載し、あとから費用が増えない見積もりをお出しします。"
+            },
+            {
+              "title": "荷物の扱いを記録",
+              "body": "積込みと荷降ろしの状態を写真で記録し、ご希望があれば共有します。"
+            }
+          ]
+        },
+        {
+          "id": "flow",
+          "type": "process",
+          "variant": "flow",
+          "heading": "ご依頼の流れ",
+          "items": [
+            {
+              "title": "お問い合わせ",
+              "body": "運びたい荷物、出発地と届け先、日時を教えてください。"
+            },
+            {
+              "title": "お打ち合わせ",
+              "body": "荷姿や納品先の条件を伺い、車の大きさと運び方を決めます。"
+            },
+            {
+              "title": "お見積もり",
+              "body": "運賃と付帯作業を分けて、書面でお出しします。"
+            },
+            {
+              "title": "運行開始",
+              "body": "定期便の場合は、初回に担当者が同乗して納品先を確認します。"
+            }
+          ]
+        },
+        {
+          "id": "recruit-banner",
+          "type": "cta",
+          "variant": "recruit",
+          "heading": "ハンドルを握る仲間を、\n募集しています。",
+          "body": "日帰りのルート配送が中心です。中型・大型ドライバーと倉庫スタッフを募集しています。"
+        },
+        {
+          "id": "quote-cta",
+          "type": "cta",
+          "variant": "quote",
+          "heading": "まずは、運びたい荷物を\n教えてください。",
+          "body": "見積もりは無料です。荷物の写真や、だいたいの量がわかるだけでも大丈夫です。"
+        }
+      ]
+    },
+    {
+      "slug": "service",
+      "title": "サービス",
+      "description": "貸切輸送・定期便・倉庫保管の内容と、保有している車両の種類を紹介します（架空の会社のデモです）。",
+      "sections": [
+        {
+          "id": "service-intro",
+          "type": "intro",
+          "heading": "サービス",
+          "body": "「運ぶ」と「預かる」を、ひとつの会社で。\n荷物の量と頻度に合わせて、組み合わせてご提案します。",
+          "imageId": "logi-shelves"
+        },
+        {
+          "id": "service-detail",
+          "type": "services",
+          "variant": "detail",
+          "heading": "サービスの内容",
+          "items": [
+            {
+              "title": "貸切輸送",
+              "body": "1台を貸し切り、積込みから納品までを同じドライバーが担当します。積み替えがないので、荷傷みと遅れのリスクを抑えられます。夜間の出発や早朝納品にも対応します。|logi-dusk"
+            },
+            {
+              "title": "定期便・ルート配送",
+              "body": "決まった曜日・時間に、決まった納品先を回ります。担当ドライバーを固定するので、納品先ごとの置き場所や受付の手順も覚えて動きます。|logi-handover"
+            },
+            {
+              "title": "倉庫保管・出荷",
+              "body": "自社倉庫で荷物を預かり、入出庫を管理します。ご指示をいただいた日の午後に出荷し、そのまま自社の車で配送できます。|logi-warehouse"
+            }
+          ]
+        },
+        {
+          "id": "fleet",
+          "type": "custom",
+          "variant": "spec",
+          "heading": "車両の種類",
+          "body": "デモのため台数は掲載していません。実際のサイトでは、保有台数と写真を掲載します。",
+          "items": [
+            {
+              "title": "2t 平ボディ・箱車",
+              "body": "小口配送・都内の狭い道の納品先"
+            },
+            {
+              "title": "4t ウイング車",
+              "body": "店舗・工場への定期便、パレット積みの荷物"
+            },
+            {
+              "title": "4t 冷蔵・冷凍車",
+              "body": "温度管理が必要な食品・資材"
+            },
+            {
+              "title": "10t ウイング車",
+              "body": "拠点間の大口輸送・長距離便"
+            }
+          ]
+        },
+        {
+          "id": "service-faq",
+          "type": "faq",
+          "variant": "faq",
+          "heading": "よくあるご質問",
+          "items": [
+            {
+              "title": "見積もりに費用はかかりますか。",
+              "body": "かかりません。荷物の量と出発地・届け先がわかれば、お見積もりをお出しします。"
+            },
+            {
+              "title": "急ぎの依頼にも対応できますか。",
+              "body": "空いている車があれば当日の便にも対応します。まずはお電話でご相談ください。"
+            },
+            {
+              "title": "1回だけの依頼でも大丈夫ですか。",
+              "body": "はい。引越しを除く、事業用の荷物であれば1回からお受けします。"
+            },
+            {
+              "title": "荷物の保険はありますか。",
+              "body": "運送中の事故に備えて、貨物保険に加入しています。補償の範囲はお見積もりの際にご説明します。"
+            }
+          ]
+        },
+        {
+          "id": "service-cta",
+          "type": "cta",
+          "variant": "quote",
+          "heading": "運び方に迷ったら、\nそのままご相談ください。",
+          "body": "荷物の写真を送っていただくと、車の大きさと運び方をこちらでご提案します。"
+        }
+      ]
+    },
+    {
+      "slug": "recruit",
+      "title": "ドライバー募集",
+      "description": "日帰りのルート配送が中心の、中型・大型ドライバーと倉庫スタッフの募集です（架空の会社のデモです）。",
+      "sections": [
+        {
+          "id": "recruit-intro",
+          "type": "intro",
+          "variant": "recruit-head",
+          "heading": "毎日、同じ道で。\nだから、毎晩帰れる。",
+          "body": "走るのは、決まったルートの日帰り便が中心です。\n長距離で何日も家に帰れない働き方は、この会社ではしていません。",
+          "imageId": "logi-tunnel"
+        },
+        {
+          "id": "recruit-jobs",
+          "type": "services",
+          "variant": "jobs",
+          "heading": "募集している仕事",
+          "items": [
+            {
+              "title": "中型ドライバー",
+              "body": "4t車で、店舗や工場へのルート配送を担当します。|中型免許（8t限定可）|日帰り"
+            },
+            {
+              "title": "大型ドライバー",
+              "body": "10t車で、関東圏の拠点間輸送を担当します。|大型免許|日帰り中心"
+            },
+            {
+              "title": "倉庫スタッフ",
+              "body": "入出庫の検品、ピッキング、フォークリフトでの積込みを担当します。|免許不問（フォークリフト資格は取得支援）|日勤"
+            }
+          ]
+        },
+        {
+          "id": "recruit-day",
+          "type": "process",
+          "variant": "drive-day",
+          "heading": "中型ドライバーの、ある1日",
+          "items": [
+            {
+              "title": "6:30　出勤・点呼",
+              "body": "体調とアルコールのチェック、車両の点検をしてから出発します。"
+            },
+            {
+              "title": "7:00　積込み・出発",
+              "body": "倉庫で積込みをして、1件目の納品先へ。"
+            },
+            {
+              "title": "8:30　納品（1〜4件目）",
+              "body": "毎日同じ納品先なので、置き場所も受付の人も顔なじみです。"
+            },
+            {
+              "title": "12:00　昼休憩",
+              "body": "休憩場所もルートごとに決めてあります。"
+            },
+            {
+              "title": "13:00　納品（5〜7件目）",
+              "body": "午後は空き容器の回収をしながら戻ります。"
+            },
+            {
+              "title": "16:00　帰庫・洗車・終業点呼",
+              "body": "日報を書いて終了。夕飯は家で食べられます。"
+            }
+          ]
+        },
+        {
+          "id": "recruit-benefits",
+          "type": "strengths",
+          "variant": "benefits",
+          "heading": "続けやすい理由",
+          "items": [
+            {
+              "title": "日帰りの運行が中心",
+              "body": "泊まりがけの長距離運行は原則ありません。"
+            },
+            {
+              "title": "免許の取得を支援",
+              "body": "中型・大型・フォークリフトの取得費用を会社が負担します（条件はデモのため架空です）。"
+            },
+            {
+              "title": "担当ルートは固定",
+              "body": "慣れた道と納品先を担当するので、毎日の負担が少なく済みます。"
+            },
+            {
+              "title": "安全装備をそろえる",
+              "body": "ドライブレコーダー、バックモニター、居眠りを知らせる機器を全車に付けています。"
+            }
+          ]
+        },
+        {
+          "id": "recruit-cta",
+          "type": "cta",
+          "variant": "entry",
+          "heading": "まずは、車と倉庫を\n見に来ませんか。",
+          "body": "応募の前に、見学だけでも大丈夫です。実際に走る車に乗って、運転席からの景色を確かめてください。"
+        }
+      ]
+    },
+    {
+      "slug": "company",
+      "title": "会社案内",
+      "description": "株式会社朝凪運輸（架空）の会社概要と、安全への取り組みです。",
+      "sections": [
+        {
+          "id": "company-intro",
+          "type": "intro",
+          "heading": "会社案内",
+          "body": "運送の仕事は、荷物を届けるだけでは終わりません。\n届いた先で、だれかの仕事が予定どおりに始まること。そこまでが私たちの仕事です。",
+          "imageId": "logi-fleet"
+        },
+        {
+          "id": "safety",
+          "type": "strengths",
+          "variant": "safety",
+          "heading": "安全への取り組み",
+          "items": [
+            {
+              "title": "出発前と帰庫後の点呼",
+              "body": "対面で体調と酒気帯びの有無を確認してから、ハンドルを握ります。"
+            },
+            {
+              "title": "毎月の安全講習",
+              "body": "ヒヤリとした場面をドライブレコーダーの映像で共有し、全員で対策を考えます。"
+            },
+            {
+              "title": "車両の定期点検",
+              "body": "法定点検に加え、毎朝の日常点検を記録して整備担当が確認します。"
+            }
+          ]
+        },
+        {
+          "id": "company-info",
+          "type": "company",
+          "heading": "会社概要",
+          "items": [
+            {
+              "title": "会社名",
+              "body": "株式会社朝凪運輸（架空の会社です）"
+            },
+            {
+              "title": "所在地",
+              "body": "デモのため掲載していません（想定：埼玉県南部）"
+            },
+            {
+              "title": "事業内容",
+              "body": "一般貨物自動車運送事業、倉庫業"
+            },
+            {
+              "title": "許可",
+              "body": "一般貨物自動車運送事業（デモのため許可番号は掲載していません）"
+            },
+            {
+              "title": "車両",
+              "body": "2t〜10t（デモのため台数は掲載していません）"
+            },
+            {
+              "title": "営業時間",
+              "body": "配車受付 平日 7:00〜19:00"
+            }
+          ]
+        },
+        {
+          "id": "company-cta",
+          "type": "cta",
+          "variant": "quote",
+          "heading": "運ぶことで、お困りごとはありませんか。",
+          "body": "今の配送の見直しや、急な増便のご相談もお受けしています。"
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "title": "お見積り・お問い合わせ",
+      "description": "輸送・保管のお見積り、ドライバー応募・見学のお申し込みフォームです。デモのため送信はされません。",
+      "sections": [
+        {
+          "id": "contact-intro",
+          "type": "intro",
+          "heading": "お見積り・お問い合わせ",
+          "body": "お見積りは無料です。わかる範囲でご記入ください。\nドライバー応募・見学の方も、こちらからお申し込みいただけます。"
+        },
+        {
+          "id": "contact-form",
+          "type": "form",
+          "heading": "お問い合わせフォーム"
+        }
+      ]
+    },
+    {
+      "slug": "privacy",
+      "title": "プライバシーポリシー",
+      "description": "個人情報の取り扱いについて（デモ用の文面）。",
+      "sections": [
+        {
+          "id": "privacy-body",
+          "type": "prose",
+          "heading": "プライバシーポリシー",
+          "body": "このページはデモ用の文面です。実際の公開時は、取得する情報、利用目的、保管期間、第三者提供の有無、問い合わせ窓口を、その会社の運用に合わせて記載します。\n\nお問い合わせフォームで受け取った会社名・氏名・連絡先・内容は、お見積りと採用のご連絡のためだけに使用します。"
+        }
+      ]
+    }
+  ]
+}

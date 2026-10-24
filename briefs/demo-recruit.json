@@ -1,0 +1,150 @@
+{
+  "company": {
+    "name": "株式会社ミナモト建設（制作デモ）",
+    "tagline": "未経験から、\nまちの骨組みをつくる人へ。",
+    "description": "道路、住宅、学校。毎日だれかが通る場所の、いちばん最初をつくる会社です。\n建設業の採用サイトの見本として作った、架空の会社のデモです。",
+    "email": "demo@example.com",
+    "phone": "",
+    "address": "デモのため所在地は掲載していません（想定：東京都多摩地域）。",
+    "philosophy": "人を育てる現場が、いい建物をつくる。",
+    "website": "https://example.invalid"
+  },
+  "industry": "construction",
+  "demo": true,
+  "factsConfirmed": true,
+  "assets": [
+    {"id":"recruit-hero","path":"recruit-hero.webp","alt":"青空の下、木造の骨組みの上で作業する職人","permitted":true,"source":"Photo: Josh Olalde / Unsplash（Unsplash License）"},
+    {"id":"job-manager","path":"job-manager.webp","alt":"建設中の室内で図面を広げて確認する人","permitted":true,"source":"Photo: GN Group / Unsplash（Unsplash License）"},
+    {"id":"job-site","path":"job-site.webp","alt":"ヘルメットをかぶり木材を運ぶ作業員を上から見た様子","permitted":true,"source":"Photo: d c / Unsplash（Unsplash License）"},
+    {"id":"job-carpenter","path":"job-carpenter.webp","alt":"作業場で道具を手に木材を加工する職人","permitted":true,"source":"Photo: Yohan Cho / Unsplash（Unsplash License）"},
+    {"id":"job-foundation","path":"job-foundation.webp","alt":"鉄筋が組まれた基礎工事の現場を上から見た様子","permitted":true,"source":"Photo: Glenov Brankovic / Unsplash（Unsplash License）"},
+    {"id":"workplace-street","path":"workplace-street.webp","alt":"都内の道路工事でミキサー車のそばに立つ作業員","permitted":true,"source":"Photo: Leongsan / Unsplash（Unsplash License）"},
+    {"id":"detail-toolbelt","path":"detail-toolbelt.webp","alt":"腰に工具ベルトを着けて現場に立つ人","permitted":true,"source":"Photo: Callum Hill / Unsplash（Unsplash License）"}
+  ],
+  "form": {"connected": false, "fields": ["name", "phone", "email", "message"]},
+  "pages": [
+    {
+      "slug": "",
+      "title": "採用情報",
+      "description": "未経験から始められる建設の仕事。施工管理・現場スタッフ・大工見習いの3職種を募集する架空の建設会社の採用サイトのデモです。",
+      "sections": [
+        {"id":"hero","type":"hero","variant":"recruit","heading":"未経験から、\nまちの骨組みをつくる人へ。","body":"道路、住宅、学校。毎日だれかが通る場所の、いちばん最初をつくる仕事です。道具の持ち方から、先輩が隣で教えます。","imageId":"recruit-hero"},
+        {"id":"message","type":"intro","heading":"現場は、ひとりでつくらない。","body":"建設の仕事は、きつそう、こわそう。そう思われがちです。\nでも実際の現場は、段取りを決め、声をかけ合い、少しずつ形にしていくチームの仕事です。\n最初の1年は、ひとりで判断させません。"},
+        {"id":"jobs","type":"services","variant":"job-cards","heading":"3つの仕事から、はじまる。","body":"経験も資格もいりません。向いていそうな仕事から選んでください。","items":[
+          {"title":"施工管理","body":"工程・安全・品質を段取りして、現場全体を前に進める仕事。図面を読む力は入社後に身につけます。"},
+          {"title":"現場スタッフ","body":"基礎や足場など、建物の土台をつくる仕事。体を動かし、毎日できることが増えていくのが実感できます。"},
+          {"title":"大工見習い","body":"木を刻み、組み、住まいの骨組みをつくる仕事。道具の手入れから、ひとつずつ覚えます。"}
+        ]},
+        {"id":"growth","type":"process","variant":"timeline","heading":"入社してからの、育ち方。","items":[
+          {"title":"最初の1か月","body":"安全の基本と道具の名前を覚えます。現場では先輩と2人1組で動きます。"},
+          {"title":"半年","body":"決まった作業を任されるようになります。わからないことは毎日の終礼で確認します。"},
+          {"title":"1年","body":"自分の担当範囲を持ちます。資格の取得に向けた勉強も始めます。"},
+          {"title":"3年","body":"後輩に教える側になります。施工管理なら小さな現場の段取りを任されます。"}
+        ]},
+        {"id":"environment","type":"strengths","variant":"benefit-grid","heading":"続けられる、仕組み。","items":[
+          {"title":"資格の費用は会社が負担","body":"玉掛け・足場・施工管理技士など、業務に必要な資格の受験費用を負担します。"},
+          {"title":"日曜・祝日は休み","body":"工程を週単位で組み、土曜も月2回は休めるようにしています。"},
+          {"title":"道具と作業着を支給","body":"入社時に必要な道具と作業着、安全靴をそろえます。"},
+          {"title":"直行直帰OK","body":"現場が自宅から近い日は、事務所に寄らずに現場へ向かえます。"}
+        ]},
+        {"id":"entry-cta","type":"cta","variant":"entry","heading":"まずは、話を聞きに来ませんか。","body":"いきなり面接ではありません。現場の見学と、仕事の説明から始めます。服装は自由です。"}
+      ]
+    },
+    {
+      "slug": "jobs",
+      "title": "仕事を知る",
+      "description": "施工管理・現場スタッフ・大工見習い。3つの仕事の内容と、現場の1日の流れを紹介します。",
+      "sections": [
+        {"id":"jobs-intro","type":"intro","heading":"仕事を知る","body":"どの仕事も、最初は先輩の隣から。3つの仕事の中身と、現場の1日を紹介します。"},
+        {"id":"job-detail","type":"services","variant":"job-detail","heading":"3つの仕事の中身","items":[
+          {"title":"施工管理","body":"職人さんの手配、材料の発注、工程表の作成、安全の確認、写真での記録。現場が予定どおり安全に進むよう段取りをする仕事です。現場と事務所の両方で働きます。"},
+          {"title":"現場スタッフ","body":"掘削、鉄筋、型枠、足場の組立てなど、建物の土台と骨組みづくりを担当します。重機の誘導や資材の運搬から始め、少しずつ技術の要る作業を任されます。"},
+          {"title":"大工見習い","body":"木材の加工、柱や梁の組立て、床や壁の下地づくりを担当します。道具の手入れと材料の扱い方から覚え、数年かけて一人前を目指します。"}
+        ]},
+        {"id":"day","type":"process","variant":"day","heading":"現場スタッフの、ある1日","items":[
+          {"title":"7:45　集合・朝礼","body":"その日の作業内容と危ないポイントを全員で確認します。"},
+          {"title":"8:00　作業開始","body":"午前中は体力のいる作業を中心に進めます。"},
+          {"title":"10:00　休憩","body":"10時と15時に、それぞれ30分の休憩があります。"},
+          {"title":"12:00　昼休み","body":"1時間。現場の近くで食べる人も、車で休む人もいます。"},
+          {"title":"17:00　片付け・終礼","body":"道具を片付け、翌日の段取りを確認して終了です。"}
+        ]},
+        {"id":"jobs-cta","type":"cta","variant":"entry","heading":"どの仕事が向いているか、一緒に考えます。","body":"迷っていても大丈夫です。見学のときに、それぞれの仕事を実際に見てから決められます。"}
+      ]
+    },
+    {
+      "slug": "environment",
+      "title": "働く環境",
+      "description": "資格取得の支援、休日、道具の支給など、建設の仕事を長く続けるための仕組みを紹介します。",
+      "sections": [
+        {"id":"env-intro","type":"intro","heading":"働く環境","body":"きつい・危ないを、仕組みで減らす。長く続けてもらうために決めていることです。","imageId":"workplace-street"},
+        {"id":"benefits","type":"strengths","variant":"benefit-list","heading":"制度と待遇","items":[
+          {"title":"資格取得支援","body":"業務に必要な資格の受験費用と講習費を会社が負担します。講習の日は出勤扱いです。"},
+          {"title":"休日","body":"日曜・祝日、土曜は月2回。夏季・年末年始休暇があります。"},
+          {"title":"社会保険完備","body":"健康保険、厚生年金、雇用保険、労災保険に加入します。"},
+          {"title":"支給品","body":"作業着、安全靴、ヘルメット、基本の工具を支給します。"},
+          {"title":"手当","body":"資格手当、通勤手当、現場手当があります。"},
+          {"title":"車通勤","body":"マイカー通勤ができます。現場の駐車場代は会社が負担します。"}
+        ]},
+        {"id":"safety","type":"prose","variant":"photo-story","heading":"安全は、毎朝の5分から。","body":"朝礼で、その日いちばん危ない作業を全員で声に出して確認します。新しく入った人がいる日は、先輩が必ず同じ作業班に入ります。","imageId":"detail-toolbelt"},
+        {"id":"faq","type":"faq","heading":"よくある質問","items":[
+          {"title":"体力に自信がありません。","body":"最初から重い作業は任せません。体の使い方も含めて少しずつ覚えれば大丈夫です。"},
+          {"title":"運転免許は必要ですか？","body":"普通自動車免許があると現場への移動が楽ですが、応募時点で持っていなくても構いません。"},
+          {"title":"女性も働けますか？","body":"働けます。現場には仮設トイレと着替えのスペースを用意しています。"},
+          {"title":"見学だけでも行けますか？","body":"はい。応募フォームの「メッセージ」に「見学希望」と書いてください。"}
+        ]}
+      ]
+    },
+    {
+      "slug": "recruit",
+      "title": "募集要項",
+      "description": "施工管理・現場スタッフ・大工見習いの募集要項と、応募から入社までの流れです。",
+      "sections": [
+        {"id":"recruit-intro","type":"intro","heading":"募集要項","body":"3つの職種とも、未経験・学歴不問で募集しています。（デモのため、金額・条件は架空の例です）"},
+        {"id":"spec-manager","type":"strengths","variant":"spec","heading":"施工管理","items":[
+          {"title":"雇用形態","body":"正社員（試用期間3か月・条件は同じ）"},
+          {"title":"給与","body":"月給24万円〜（経験・資格により決定）"},
+          {"title":"勤務時間","body":"8:00〜17:00（休憩2時間）"},
+          {"title":"勤務地","body":"東京都・神奈川県内の各現場"},
+          {"title":"応募資格","body":"未経験可。普通自動車免許があれば歓迎"}
+        ]},
+        {"id":"spec-site","type":"strengths","variant":"spec","heading":"現場スタッフ","items":[
+          {"title":"雇用形態","body":"正社員（試用期間3か月・条件は同じ）"},
+          {"title":"給与","body":"日給1万2千円〜（月給制への切替あり）"},
+          {"title":"勤務時間","body":"8:00〜17:00（休憩2時間）"},
+          {"title":"勤務地","body":"東京都・神奈川県内の各現場"},
+          {"title":"応募資格","body":"未経験可。18歳以上"}
+        ]},
+        {"id":"spec-carpenter","type":"strengths","variant":"spec","heading":"大工見習い","items":[
+          {"title":"雇用形態","body":"正社員（試用期間3か月・条件は同じ）"},
+          {"title":"給与","body":"月給22万円〜"},
+          {"title":"勤務時間","body":"8:00〜17:00（休憩2時間）"},
+          {"title":"勤務地","body":"東京都多摩地域の住宅現場と作業場"},
+          {"title":"応募資格","body":"未経験可。ものづくりが好きな方"}
+        ]},
+        {"id":"selection","type":"process","variant":"steps","heading":"応募から入社まで","items":[
+          {"title":"応募","body":"フォームから送信してください。2営業日以内にご連絡します。"},
+          {"title":"見学・説明","body":"現場か事務所で、仕事の様子を見てもらいます。"},
+          {"title":"面接","body":"1回だけです。履歴書は当日でも構いません。"},
+          {"title":"内定・入社","body":"入社日は相談して決めます。"}
+        ]}
+      ]
+    },
+    {
+      "slug": "entry",
+      "title": "応募する",
+      "description": "見学・応募のフォームです。デモのため送信はされません。",
+      "sections": [
+        {"id":"entry-intro","type":"intro","heading":"応募する","body":"見学だけの申し込みもこちらからどうぞ。希望する職種と、聞きたいことがあれば書いてください。"},
+        {"id":"entry-form","type":"form","heading":"見学・応募フォーム"}
+      ]
+    },
+    {
+      "slug": "privacy",
+      "title": "プライバシーポリシー",
+      "description": "応募者の個人情報の取り扱いについて（デモ用の文面）。",
+      "sections": [
+        {"id":"privacy-body","type":"prose","heading":"プライバシーポリシー","body":"このページはデモ用の文面です。実際の公開時は、取得する情報、利用目的、保管期間、第三者提供の有無、問い合わせ窓口を、その会社の運用に合わせて記載します。\n\n応募フォームで受け取った氏名・連絡先・メッセージは、採用選考と連絡のためだけに使用します。"}
+      ]
+    }
+  ]
+}

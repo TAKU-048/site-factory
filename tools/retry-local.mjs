@@ -1,0 +1,1 @@
+const url='http://127.0.0.1:4350/__scheduled?cron=local-manual';const r=await fetch(url,{redirect:'error'});if(!r.ok)throw Error('ローカル再試行が失敗しました。');console.log('ローカルの通知待ちを処理しました。状態は通常起動なら summary:local、候補起動なら summary:candidate で確認してください。');

@@ -1,0 +1,2 @@
+export async function localOnlyFetch(input:RequestInfo|URL,init?:RequestInit){const url=new URL(input instanceof Request?input.url:String(input));if(!['127.0.0.1','localhost','[::1]'].includes(url.hostname)||url.protocol!=='http:')throw Error('local transport only');return fetch(input, {...init,redirect:'error'})}
+export async function verifyLocal(token:string){if(token==='local-unavailable')throw Error('verification unavailable');return {success:token==='local-pass',hostname:'127.0.0.1',action:'contact'}}

@@ -1,0 +1,1 @@
+{"id":"b2b","name":"法人向けサービス","required":["company.name","company.description","company.email"],"questions":["主な顧客と課題","提供範囲","相談から導入までの流れ","理念・こだわり","掲載許可のある事例"],"suggestedPages":["services","approach","company","contact"],"cautions":["未確認の効果・導入実績・顧客名を掲載しない"]}

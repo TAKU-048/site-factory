@@ -1,0 +1,1 @@
+{"id":"construction","name":"建築・リフォーム","required":["company.name","company.description","company.email"],"questions":["対応する工事・設計","対応地域","登録・許可と確認資料","施工写真の掲載許可","素材・施工・設計で大切にすること"],"suggestedPages":["services","approach","company","contact"],"cautions":["資格・許可・施工実績は資料で確認","図版を実際の施工写真と説明しない"]}

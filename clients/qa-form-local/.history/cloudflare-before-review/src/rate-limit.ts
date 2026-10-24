@@ -1,0 +1,4 @@
+import type {RateGate} from './types.ts';
+export function productionRateGate(binding:{limit(input:{key:string}):Promise<{success:boolean}>}):RateGate{return {allow:async(key:string)=>(await binding.limit({key})).success}}
+export function localRateGate():RateGate{const buckets=new Map<string,{minute:number;count:number}>();return {async allow(key){const minute=Math.floor(Date.now()/60000);for(const [k,b]of buckets)if(b.minute!==minute)buckets.delete(k);const b=buckets.get(key)||{minute,count:0};buckets.set(key,b);return ++b.count<=5}}}
+export async function rateKey(request:Request,secret:string,now:number){const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);return Array.from(new Uint8Array(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode(`${Math.floor(now/60000)}:${request.headers.get('CF-Connecting-IP')||'local'}`)))).map(x=>x.toString(16).padStart(2,'0')).join('')}

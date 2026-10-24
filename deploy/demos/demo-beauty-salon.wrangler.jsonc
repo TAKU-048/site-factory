@@ -1,0 +1,12 @@
+// 営業用デモ demo-beauty-salon の公開設定（2026-10-21）。誰でも閲覧できる（認証なし）とユーザー決定済み。
+// 公開URL: https://demo-beauty-salon.tk-sites.workers.dev ／ 中身は clients/demo-beauty-salon/dist（npm run build の出力）
+{
+  "name": "demo-beauty-salon",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "../../clients/demo-beauty-salon/dist",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": false
+}

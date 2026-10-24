@@ -1,0 +1,38 @@
+---
+import site from '../data/site.json';
+import '../styles/site.css';
+import '../custom/client.css';
+interface Props {title:string;description:string;slug?:string}
+const {title,description,slug=''}=Astro.props;
+const canonical=new URL(slug?`/${slug}/`:'/',Astro.site);
+const design=site.design;
+const tokens=Object.entries(design.tokens).map(([k,v])=>`--${k}:${v}`).join(';');
+const nav=site.pages.filter(p=>!['','privacy','contact'].includes(p.slug));
+const shortName='朝凪運輸';
+---
+<!doctype html><html lang="ja"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title} | {site.company.name}</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/><meta property="og:title" content={`${title} | ${site.company.name}`}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={canonical}/><meta name="robots" content="noindex, nofollow"/><meta name="theme-color" content="#11161D"/></head>
+<body data-design={design.id} data-page={slug||'home'} style={tokens}>
+<a class="skip-link" href="#main">本文へ移動</a>
+{site.demo&&<div class="demo-notice">運送会社のホームページの見本として作った、架空の会社のサイトです。写真は素材サイト（Unsplash）のもので、実在の会社・車両ではありません。</div>}
+<header class="site-header">
+  <a class="brand" href="/" aria-label={`${shortName} トップ`}>
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 36 L17 4 M32 36 L23 4" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M20 34v-5M20 23v-5M20 12V8" stroke="var(--amber)" stroke-width="3" stroke-linecap="round"/></svg>
+    <span class="brand-name">{shortName}<small>ASANAGI TRANSPORT</small></span>
+  </a>
+  <nav class="main-nav" aria-label="メインナビゲーション">{nav.map(p=><a href={`/${p.slug}/`} aria-current={p.slug===slug?'page':undefined}>{p.title}</a>)}</nav>
+  <a class="header-cta" href="/contact/" aria-current={slug==='contact'?'page':undefined}>お見積り</a>
+</header>
+<main id="main"><slot/></main>
+<footer class="site-footer">
+  <div class="footer-road" aria-hidden="true"></div>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-name">{shortName}</p>
+      <p class="footer-philosophy">{site.company.philosophy}</p>
+    </div>
+    <nav class="footer-links" aria-label="フッターナビゲーション"><a href="/">トップ</a>{nav.map(p=><a href={`/${p.slug}/`}>{p.title}</a>)}<a href="/contact/">お見積り・お問い合わせ</a><a href="/privacy/">プライバシーポリシー</a></nav>
+    <p class="footer-note">このサイトはデモです。会社名・所在地・車両・募集条件などはすべて架空の例です。</p>
+  </div>
+</footer>
+<script>import '../scripts/motion';</script>
+</body></html>

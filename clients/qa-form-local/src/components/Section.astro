@@ -1,0 +1,17 @@
+---
+import site from '../data/site.json';
+import {siteLinks} from '../lib/links';
+const links=siteLinks(site.pages);
+import Hero from './Hero.astro';
+import ContactForm from './ContactForm.astro';
+import Feature from '../custom/Feature.astro';
+interface Props {section:{id:string;type:string;variant?:string;heading?:string;body?:string;items?:{title:string;body:string}[];imageId?:string};first?:boolean}
+const {section:s,first=false}=Astro.props;
+const image=site.assets.find(a=>a.id===s.imageId);
+---
+{s.type==='hero'?<Hero {...s}/>:s.type==='custom'?<section class="section-wrap" id={s.id}><Feature heading={s.heading} body={s.body}/></section>:<section id={s.id} class={`section-wrap section--${s.type} variant--${s.variant||'default'}`}>
+<div class="section-heading">{first?<h1>{s.heading}</h1>:<h2>{s.heading}</h2>}{s.body&&<p class="section-intro">{s.body}</p>}</div>
+{s.type==='company'?<dl class="company-list"><div><dt>名称</dt><dd>{site.company.name}</dd></div><div><dt>大切にすること</dt><dd>{site.company.philosophy||site.company.description}</dd></div><div><dt>所在地</dt><dd>{site.company.address}</dd></div><div><dt>連絡先</dt><dd>{site.company.email}</dd></div></dl>:s.type==='form'?<ContactForm/>:s.type==='cta'&&links.contact?<a class="contact-link" href={links.contact}>ご相談について<svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>:null}
+{s.items&&s.items.length>0&&(s.type==='faq'?<div class="faq-list">{s.items.map(item=><details><summary>{item.title}<span aria-hidden="true">＋</span></summary><p>{item.body}</p></details>)}</div>:<div class={`item-list item-list--${s.type}`}>{s.items.map((item,i)=><article>{s.type==='process'&&<span class="step-label">STEP {i+1}</span>}<h3>{item.title}</h3><p>{item.body}</p></article>)}</div>)}
+{image&&<figure class="section-image"><img src={`/assets/${image.path}`} alt={image.alt} width="1600" height="1600" loading="lazy"/></figure>}
+</section>}

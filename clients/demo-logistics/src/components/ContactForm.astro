@@ -1,0 +1,49 @@
+---
+// デモ専用フォーム：入力・確認はできるが、どこにも送信しない（通信処理を持たない）。
+// 「お見積り」を選んだときだけ、出発地・届け先・荷物の欄を表示する。
+const kinds=[{v:'quote',l:'お見積り'},{v:'recruit',l:'応募・見学'},{v:'other',l:'その他'}];
+---
+<form class="demo-form" data-demo-form novalidate aria-describedby="demo-form-note">
+  <p id="demo-form-note" class="form-note">デモのため、入力内容はどこにも送信・保存されません。</p>
+  <fieldset class="kind">
+    <legend>ご用件<span class="req">必須</span></legend>
+    <div class="kind-options">{kinds.map((k,i)=><label class="kind-option"><input type="radio" name="kind" value={k.v} checked={i===0} required/><span>{k.l}</span></label>)}</div>
+  </fieldset>
+  <div class="form-grid">
+    <div class="form-row"><label for="f-company">会社名<span class="opt">任意</span></label><input id="f-company" name="company" type="text" autocomplete="organization" maxlength="100"/></div>
+    <div class="form-row"><label for="f-name">お名前<span class="req">必須</span></label><input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100"/></div>
+    <div class="form-row"><label for="f-phone">電話番号<span class="opt">任意</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="20"/></div>
+    <div class="form-row"><label for="f-email">メールアドレス<span class="req">必須</span></label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="254"/></div>
+  </div>
+  <div class="quote-fields" data-quote-fields>
+    <p class="quote-title">運ぶ荷物について<span class="opt">わかる範囲で</span></p>
+    <div class="form-grid">
+      <div class="form-row"><label for="f-origin">出発地</label><input id="f-origin" name="origin" type="text" maxlength="100" aria-describedby="h-origin"/><p class="hint" id="h-origin">例：さいたま市の倉庫</p></div>
+      <div class="form-row"><label for="f-destination">届け先</label><input id="f-destination" name="destination" type="text" maxlength="100" aria-describedby="h-destination"/><p class="hint" id="h-destination">例：横浜市内の店舗3か所</p></div>
+    </div>
+    <div class="form-row"><label for="f-cargo">荷物の内容・量</label><input id="f-cargo" name="cargo" type="text" maxlength="200" aria-describedby="h-cargo"/><p class="hint" id="h-cargo">例：段ボール約120箱、パレット4枚</p></div>
+  </div>
+  <div class="form-row"><label for="f-message" data-message-label>ご希望の日時・ご相談内容<span class="opt">任意</span></label><textarea id="f-message" name="message" rows="5" maxlength="2000"></textarea></div>
+  <button type="submit" class="button button--amber">内容を確認する</button>
+  <p class="form-status" role="status" aria-live="polite" tabindex="-1" data-status></p>
+</form>
+<script>
+for(const form of document.querySelectorAll<HTMLFormElement>('form[data-demo-form]')){
+  const status=form.querySelector<HTMLElement>('[data-status]')!;
+  const quote=form.querySelector<HTMLElement>('[data-quote-fields]')!;
+  const label=form.querySelector<HTMLElement>('[data-message-label]')!;
+  const sync=()=>{const k=(form.querySelector<HTMLInputElement>('input[name=kind]:checked')||{value:'quote'}).value;quote.hidden=k!=='quote';label.firstChild!.textContent=k==='recruit'?'希望の職種・見学の希望日':k==='quote'?'ご希望の日時・ご相談内容':'お問い合わせ内容';};
+  const kind=new URLSearchParams(location.search).get('kind');
+  if(kind){const r=form.querySelector<HTMLInputElement>(`input[name=kind][value="${CSS.escape(kind)}"]`);if(r)r.checked=true;}
+  sync();
+  form.addEventListener('change',(e)=>{if((e.target as HTMLInputElement).name==='kind')sync();});
+  form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    form.querySelectorAll('[aria-invalid]').forEach(el=>el.removeAttribute('aria-invalid'));
+    const invalid=Array.from(form.querySelectorAll<HTMLInputElement>('input:not([type=radio])')).find(el=>!el.checkValidity());
+    if(invalid){invalid.setAttribute('aria-invalid','true');status.textContent=`${invalid.labels?.[0]?.firstChild?.textContent||'入力内容'}を確認してください。`;status.focus();return;}
+    status.textContent='入力ありがとうございます。デモのため送信はされません。実際のサイトでは、ここで会社に通知が届き、担当者から折り返しご連絡します。';
+    status.focus();
+  });
+}
+</script>

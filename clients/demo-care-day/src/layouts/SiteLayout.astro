@@ -1,0 +1,39 @@
+---
+import site from '../data/site.json';
+import '../styles/site.css';
+import '../custom/client.css';
+interface Props {title:string;description:string;slug?:string}
+const {title,description,slug=''}=Astro.props;
+const canonical=new URL(slug?`/${slug}/`:'/',Astro.site);
+const design=site.design;
+const tokens=Object.entries(design.tokens).map(([k,v])=>`--${k}:${v}`).join(';');
+const nav=site.pages.filter(p=>!['','privacy','contact'].includes(p.slug));
+---
+<!doctype html><html lang="ja"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title} | {site.company.name}</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/><meta property="og:title" content={`${title} | ${site.company.name}`}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={canonical}/><meta name="robots" content="noindex, nofollow"/><meta name="theme-color" content={design.tokens.paper}/>
+<script is:inline>try{if(localStorage.getItem('komorebi-text')==='large')document.documentElement.classList.add('text-large')}catch(e){}</script></head>
+<body data-design={design.id} data-page={slug||'home'} style={tokens}>
+<a class="skip-link" href="#main">本文へ移動</a>
+{site.demo&&<div class="demo-notice">介護事業所のホームページの見本として作った、架空の事業所のサイトです。写真は素材サイト（Unsplash）のもので、実在の施設・利用者ではありません。</div>}
+<header class="site-header">
+  <a class="brand" href="/" aria-label="こもれび舎 トップ">
+    <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="30" cy="18" r="9" class="bm-sun"/><path class="bm-leaf" d="M6 40c4-16 16-24 30-22-2 14-14 24-30 22z"/><path class="bm-rib" d="M8 39c8-7 16-12 26-19"/></svg>
+    <span class="brand-name"><small>デイサービス</small>こもれび舎</span>
+  </a>
+  <nav class="main-nav" aria-label="メインナビゲーション">{nav.map(p=><a href={`/${p.slug}/`} aria-current={p.slug===slug?'page':undefined}>{p.title}</a>)}</nav>
+  <button type="button" class="text-size" data-text-size aria-pressed="false"><span class="ts-a" aria-hidden="true">あ</span><span data-text-size-label>文字を大きく</span></button>
+  <a class="header-cta" href="/contact/" aria-current={slug==='contact'?'page':undefined}>見学・相談</a>
+</header>
+<main id="main"><slot/></main>
+<footer class="site-footer">
+  <svg class="footer-eaves" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 300 0, 900 0, 1200 60 Z"/></svg>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-name"><small>デイサービス</small>こもれび舎</p>
+      <p class="footer-philosophy">{site.company.philosophy}</p>
+    </div>
+    <nav class="footer-links" aria-label="フッターナビゲーション"><a href="/">トップ</a>{nav.map(p=><a href={`/${p.slug}/`}>{p.title}</a>)}<a href="/contact/">見学・ご相談</a><a href="/privacy/">プライバシーポリシー</a></nav>
+    <p class="footer-note">このサイトはデモです。事業所名・所在地・営業時間・募集条件などはすべて架空の例です。</p>
+  </div>
+</footer>
+<script>import '../scripts/motion';</script>
+</body></html>

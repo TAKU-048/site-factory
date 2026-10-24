@@ -1,0 +1,578 @@
+[
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/services/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/approach/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/company/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/contact/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/privacy/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/services/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/approach/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/company/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/contact/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/privacy/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/services/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/approach/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/company/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/contact/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/privacy/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/services/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/approach/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/company/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/contact/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 11.77950189313724,
+    "small": [],
+    "url": "http://127.0.0.1:4337/privacy/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/services/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/approach/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/company/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/contact/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/privacy/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/services/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/approach/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/company/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/contact/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/privacy/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/services/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/approach/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/company/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/contact/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/privacy/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/services/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/approach/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/company/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/contact/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.551053693862189,
+    "small": [],
+    "url": "http://127.0.0.1:4338/privacy/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/services/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/approach/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/company/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/contact/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/privacy/",
+    "viewport": 360,
+    "width": 360
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/services/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/approach/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/company/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/contact/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/privacy/",
+    "viewport": 375,
+    "width": 375
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/services/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/approach/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/company/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/contact/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/privacy/",
+    "viewport": 768,
+    "width": 768
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/services/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/approach/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/company/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/contact/",
+    "viewport": 1280,
+    "width": 1280
+  },
+  {
+    "h1": 1,
+    "minContrast": 13.013746328729107,
+    "small": [],
+    "url": "http://127.0.0.1:4339/privacy/",
+    "viewport": 1280,
+    "width": 1280
+  }
+]

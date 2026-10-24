@@ -1,0 +1,123 @@
+---
+// ミナモト建設（制作デモ）専用のセクション描画。データは共通エンジンの site.json（type / variant / items / imageId）。
+import site from '../data/site.json';
+import ContactForm from './ContactForm.astro';
+import {itemImages,asset,srcset,jobAnchors} from '../custom/media';
+import {icons,itemIcons} from '../custom/icons';
+interface Props {section:{id:string;type:string;variant?:string;heading?:string;body?:string;items?:{title:string;body:string}[];imageId?:string};first?:boolean}
+const {section:s,first=false}=Astro.props;
+const image=asset(s.imageId);
+const imgs=(itemImages[s.id]||[]).map(asset);
+const v=s.variant||'default';
+const H=first?'h1':'h2';
+const lines=(t?:string)=>(t||'').split('\n');
+const home=site.pages.find(p=>p.slug==='');
+const envItems=((home?.sections.find(x=>x.id==='environment') as {items?:{title:string}[]}|undefined)?.items)||[];
+const perks=['未経験から始められる',...envItems.map(i=>i.title),'見学だけでも歓迎'];
+const ic=itemIcons[s.id]||[];
+---
+{s.type==='hero'?(
+<section class="hero" aria-labelledby="hero-title">
+  <div class="blueprint" aria-hidden="true">
+    <svg class="frame-drawing" viewBox="0 0 600 420" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path class="d d1" d="M20 380H580"/>
+      <path class="d d2" d="M80 380V200M200 380V200M320 380V200M440 380V200M520 380V200"/>
+      <path class="d d3" d="M60 200H540M80 290H520"/>
+      <path class="d d4" d="M60 200L300 60L540 200M140 165L140 200M220 118V200M300 60V200M380 118V200M460 165V200"/>
+      <path class="d d5" d="M80 400H520M80 394V406M520 394V406M300 30H580M580 24V36M300 24V36"/>
+      <text class="dim" x="282" y="416">9,100</text><text class="dim" x="420" y="22">屋根勾配 5寸</text>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-context">{site.company.name.replace('（制作デモ）','')}　採用情報</p>
+      <h1 id="hero-title" class="hero-title">{lines(s.heading).map((l,i)=><span class="line" style={`--i:${i}`}><span>{l}</span></span>)}</h1>
+      <p class="hero-body">{s.body}</p>
+      <div class="hero-actions"><a class="button button--yellow" href="/entry/">見学・応募する</a><a class="button button--ghost" href="/jobs/">仕事を知る</a></div>
+    </div>
+    <figure class="hero-photo">{image&&<img src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 768px) 100vw, 50vw" alt={image.alt} width="1600" height="1067" fetchpriority="high"/>}</figure>
+  </div>
+  <div class="ticker" data-ticker>
+    <div class="ticker-track" aria-hidden="true">{[0,1].map(()=><span class="ticker-set">{perks.map(p=><span class="ticker-item">{p}</span>)}</span>)}</div>
+    <p class="sr-only">{perks.join('、')}</p>
+    <button type="button" class="ticker-toggle" aria-pressed="false" data-ticker-toggle>流れを止める</button>
+  </div>
+</section>
+):s.type==='cta'?(
+<section class="cta-band" id={s.id}>
+  <div class="hazard" aria-hidden="true"></div>
+  <div class="cta-inner" data-reveal><h2>{s.heading}</h2>{s.body&&<p>{s.body}</p>}<a class="button button--ink button--big" href="/entry/">見学・応募する</a></div>
+  <div class="hazard hazard--bottom" aria-hidden="true"></div>
+</section>
+):s.type==='intro'&&first?(
+<section class={`page-head ${image?'page-head--photo':''}`} id={s.id}>
+  <div class="blueprint" aria-hidden="true"></div>
+  <div class="wrap page-head-inner"><H class="page-title">{s.heading}</H>{s.body&&<p class="page-lead">{s.body}</p>}</div>
+  {image&&<figure class="wide-photo" data-reveal><img src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="100vw" alt={image.alt} width="1600" height="2400" loading="lazy"/><figcaption>{image.source}</figcaption></figure>}
+</section>
+):s.type==='intro'?(
+<section class="statement" id={s.id}>
+  <div class="wrap statement-grid">
+    <div data-reveal class="statement-text"><H>{lines(s.heading).join('')}</H>{s.body&&<p>{s.body}</p>}</div>
+    <svg class="section-drawing" data-reveal viewBox="0 0 320 320" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path class="d" d="M40 280H280M60 280V120H260V280M60 200H260M160 120V280"/>
+      <path class="d" d="M40 120L160 50L280 120"/>
+      <path class="d" d="M20 120V280M14 120H26M14 280H26M60 300H260M60 294V306M260 294V306"/>
+      <circle class="d" cx="110" cy="240" r="14"/><circle class="d" cx="210" cy="240" r="14"/>
+    </svg>
+  </div>
+</section>
+):s.type==='services'&&v==='job-cards'?(
+<section class="section jobs" id={s.id}>
+  <div class="wrap"><div class="section-head" data-reveal><h2>{s.heading}</h2>{s.body&&<p>{s.body}</p>}</div>
+  <ul class="job-cards">{s.items?.map((item,i)=>{const im=imgs[i];return <li style={`--i:${i}`} data-reveal><a href={`/jobs/#${jobAnchors[i]}`}><span class="job-photo">{im&&<img src={`/assets/${im.path}`} srcset={srcset(im.path)} sizes="(max-width: 768px) 100vw, 33vw" alt={im.alt} width="800" height="1000" loading="lazy"/>}</span><span class="job-body"><span class="job-title">{item.title}</span><span class="job-text">{item.body}</span><span class="more">{item.title}の仕事を見る</span></span></a></li>})}</ul></div>
+</section>
+):s.type==='services'&&v==='job-detail'?(
+<section class="section job-detail" id={s.id}>
+  <div class="wrap"><h2 class="sr-only">{s.heading}</h2>
+  {s.items?.map((item,i)=>{const im=imgs[i];return <article class="job-row" id={jobAnchors[i]}><div class="job-figure" data-reveal>{im&&<img src={`/assets/${im.path}`} srcset={srcset(im.path)} sizes="(max-width: 768px) 100vw, 55vw" alt={im.alt} width="800" height="600" loading="lazy"/>}</div><div class="job-text" data-reveal><h3>{item.title}</h3><p>{item.body}</p><a class="text-link" href="/entry/">{item.title}に応募する</a></div></article>})}</div>
+</section>
+):s.type==='process'&&v==='timeline'?(
+<section class="section growth" id={s.id}>
+  <div class="blueprint blueprint--dark" aria-hidden="true"></div>
+  <div class="wrap growth-grid">
+    <div class="growth-head" data-reveal><h2>{s.heading}</h2><p>最初の1年は、ひとりで判断させません。</p></div>
+    <ol class="growth-list" data-progress>{s.items?.map(item=><li data-step><span class="growth-dot" aria-hidden="true"></span><h3>{item.title}</h3><p>{item.body}</p></li>)}</ol>
+  </div>
+</section>
+):s.type==='process'&&v==='day'?(
+<section class="section day" id={s.id}>
+  <div class="wrap"><div class="section-head" data-reveal><h2>{s.heading}</h2>{s.body&&<p>{s.body}</p>}</div>
+  <ol class="day-track" data-progress>{s.items?.map(item=>{const [time,...rest]=item.title.split('　');return <li data-step><span class="day-time">{time}</span><span class="day-dot" aria-hidden="true"></span><h3>{rest.join('　')}</h3><p>{item.body}</p></li>})}</ol></div>
+</section>
+):s.type==='process'?(
+<section class="section steps-section" id={s.id}>
+  <div class="wrap"><div class="section-head" data-reveal><h2>{s.heading}</h2>{s.body&&<p>{s.body}</p>}</div>
+  <ol class="steps">{s.items?.map((item,i)=><li data-reveal style={`--i:${i}`}><h3>{item.title}</h3><p>{item.body}</p></li>)}</ol></div>
+</section>
+):s.type==='strengths'&&v==='spec'?(
+<section class="section spec" id={s.id}>
+  <div class="wrap spec-grid" data-reveal><h2><span>{s.heading}</span></h2><dl class="spec-list">{s.items?.map(item=><div><dt>{item.title}</dt><dd>{item.body}</dd></div>)}</dl></div>
+</section>
+):s.type==='strengths'?(
+<section class={`section benefits benefits--${v}`} id={s.id}>
+  <div class="wrap"><div class="section-head" data-reveal><h2>{s.heading}</h2>{s.body&&<p>{s.body}</p>}</div>
+  <ul class="benefit-list">{s.items?.map((item,i)=><li data-reveal style={`--i:${i}`}>{ic[i]&&<svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={icons[ic[i]]}></svg>}<h3>{item.title}</h3><p>{item.body}</p></li>)}</ul></div>
+</section>
+):s.type==='prose'&&image?(
+<section class="section story" id={s.id}>
+  <div class="wrap story-grid"><div class="story-figure" data-reveal><img src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 768px) 100vw, 50vw" alt={image.alt} width="800" height="533" loading="lazy"/><span class="tape" aria-hidden="true">安全確認　よし　安全確認　よし　安全確認　よし</span></div><div data-reveal><h2>{s.heading}</h2><p>{s.body}</p></div></div>
+</section>
+):s.type==='faq'?(
+<section class="section faq" id={s.id}>
+  <div class="wrap narrow"><h2 data-reveal>{s.heading}</h2><div class="faq-list">{s.items?.map(item=><details><summary>{item.title}</summary><p>{item.body}</p></details>)}</div></div>
+</section>
+):s.type==='form'?(
+<section class="section form-section" id={s.id}>
+  <div class="wrap narrow"><h2>{s.heading}</h2><ContactForm/></div>
+</section>
+):(
+<section class="section prose" id={s.id}>
+  <div class="wrap narrow"><H>{s.heading}</H>{s.body&&<p class="prose-body">{s.body}</p>}</div>
+</section>
+)}

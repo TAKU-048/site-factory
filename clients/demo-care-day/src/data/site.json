@@ -1,0 +1,518 @@
+{
+  "company": {
+    "name": "デイサービス こもれび舎（制作デモ）",
+    "tagline": "いつもの午後を、\nみんなの縁側で。",
+    "description": "体操、おしゃべり、手づくりの昼ごはん。住宅街にある、定員の小さなデイサービスです。\n介護事業所のホームページの見本として作った、架空の施設のデモです。",
+    "email": "demo@example.com",
+    "address": "デモのため所在地は掲載していません（想定：東京都郊外の住宅街）。",
+    "phone": "",
+    "philosophy": "できることは、できるままに。",
+    "website": "https://example.invalid",
+    "logoId": ""
+  },
+  "industry": "care",
+  "demo": true,
+  "factsConfirmed": true,
+  "assets": [
+    {
+      "id": "care-walk",
+      "path": "care-walk.webp",
+      "alt": "木漏れ日の差す並木道を、寄り添って歩く年配の二人の後ろ姿",
+      "permitted": true,
+      "source": "Photo: micheile henderson / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "care-light",
+      "path": "care-light.webp",
+      "alt": "窓辺に置かれた観葉植物に、やわらかな日差しが当たっている",
+      "permitted": true,
+      "source": "Photo: Jakayla Toney / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "care-coloring",
+      "path": "care-coloring.webp",
+      "alt": "明るい部屋で、職員が年配の利用者の塗り絵を隣でのぞき込んでいる",
+      "permitted": true,
+      "source": "Photo: Age Cymru / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "care-reading",
+      "path": "care-reading.webp",
+      "alt": "ソファに並んで座り、アルバムを見ながら笑い合う二人",
+      "permitted": true,
+      "source": "Photo: Centre for Ageing Better / Unsplash（Public Domain・Unsplash License）"
+    },
+    {
+      "id": "care-meal",
+      "path": "care-meal.webp",
+      "alt": "木のお盆にのった、ごはん、具だくさんの汁物、漬物の和食",
+      "permitted": true,
+      "source": "Photo: Takafumi Yamashita / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "care-garden",
+      "path": "care-garden.webp",
+      "alt": "畑の土に、手で苗を植えている様子",
+      "permitted": true,
+      "source": "Photo: Sandie Clarke / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "care-hands",
+      "path": "care-hands.webp",
+      "alt": "年配の人の手を、両側から別の手がそっと支えている",
+      "permitted": true,
+      "source": "Photo: Joshua Hoehne / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "care-tea",
+      "path": "care-tea.webp",
+      "alt": "小さな鉢植えと、ポットとカップがのった丸いテーブル",
+      "permitted": true,
+      "source": "Photo: Theme Photos / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "care-blue",
+      "path": "care-blue.webp",
+      "alt": "藍色の服の上で重ねられた、年配の人の両手",
+      "permitted": true,
+      "source": "Photo: Trương Tuyết Ly / Unsplash（Unsplash License）"
+    }
+  ],
+  "form": {
+    "connected": false,
+    "mode": "disconnected",
+    "fields": [
+      "kind",
+      "name",
+      "relation",
+      "phone",
+      "email",
+      "date",
+      "message"
+    ]
+  },
+  "pages": [
+    {
+      "slug": "",
+      "title": "デイサービス",
+      "description": "体操、おしゃべり、手づくりの昼ごはん。住宅街にある小さなデイサービスの、ホームページの見本として作った架空の施設のデモです。",
+      "sections": [
+        {
+          "id": "hero",
+          "type": "hero",
+          "variant": "komorebi",
+          "heading": "いつもの午後を、\nみんなの縁側で。",
+          "body": "体操、おしゃべり、手づくりの昼ごはん。家に帰るまでが、ちょうどいい一日になるように過ごしています。",
+          "imageId": "care-walk"
+        },
+        {
+          "id": "welcome",
+          "type": "intro",
+          "variant": "welcome",
+          "heading": "はじめての方へ",
+          "body": "「知らない人ばかりの場所に、親がなじめるだろうか」。\n見学にいらっしゃるご家族から、いちばん多く聞く心配です。\nこもれび舎は、定員の小さな、家のような事業所です。週に1回の利用から始めて、少しずつ慣れていく方がほとんどです。",
+          "imageId": "care-light"
+        },
+        {
+          "id": "day",
+          "type": "process",
+          "variant": "sun-day",
+          "heading": "こもれび舎の、1日",
+          "body": "時間の流れに合わせて、太陽が動きます。",
+          "items": [
+            {
+              "title": "8:30　お迎え",
+              "body": "ご自宅の玄関まで、職員がお迎えに伺います。"
+            },
+            {
+              "title": "9:30　健康チェック",
+              "body": "血圧と体温を測り、その日の体調を伺います。"
+            },
+            {
+              "title": "10:00　入浴",
+              "body": "ひとりずつ、職員が付き添ってゆっくり入ります。"
+            },
+            {
+              "title": "11:00　体操",
+              "body": "椅子に座ったままできる体操で、体をほぐします。"
+            },
+            {
+              "title": "12:00　昼ごはん",
+              "body": "台所で毎日つくる、季節の献立です。"
+            },
+            {
+              "title": "13:30　午後の活動",
+              "body": "手仕事、畑、歌、将棋。やりたいことを選べます。"
+            },
+            {
+              "title": "15:00　おやつ",
+              "body": "お茶を飲みながら、おしゃべりの時間。"
+            },
+            {
+              "title": "16:15　お送り",
+              "body": "その日の様子を連絡帳に書いて、ご自宅までお送りします。"
+            }
+          ]
+        },
+        {
+          "id": "moments",
+          "type": "projects",
+          "variant": "moments",
+          "heading": "こんな時間を、過ごしています。",
+          "body": "写真は素材サイトのイメージで、実際の利用者・施設ではありません。",
+          "items": [
+            {
+              "title": "毎日の昼ごはん",
+              "body": "だしからとる汁物と、季節の野菜。"
+            },
+            {
+              "title": "手仕事の時間",
+              "body": "塗り絵、ちぎり絵、季節の飾りづくり。"
+            },
+            {
+              "title": "庭の小さな畑",
+              "body": "春に植えて、夏にみんなで収穫。"
+            },
+            {
+              "title": "アルバムを開いて",
+              "body": "昔の写真から、話がはずみます。"
+            }
+          ]
+        },
+        {
+          "id": "family",
+          "type": "strengths",
+          "variant": "family",
+          "heading": "ご家族に、安心していただくために",
+          "items": [
+            {
+              "title": "玄関までの送迎",
+              "body": "段差のあるお宅では、職員2名でお迎えに伺います。"
+            },
+            {
+              "title": "毎回の連絡帳",
+              "body": "食事の量、入浴、その日の様子を書いてお渡しします。"
+            },
+            {
+              "title": "看護職員がいます",
+              "body": "利用日には看護職員が、体調の変化に気を配ります。"
+            },
+            {
+              "title": "急な体調の変化にも",
+              "body": "利用中に体調が変わったときは、すぐにご家族へ連絡します。"
+            }
+          ]
+        },
+        {
+          "id": "visit-cta",
+          "type": "cta",
+          "variant": "visit",
+          "heading": "まずは、見学に\nいらしてください。",
+          "body": "ご本人と一緒でも、ご家族だけでも大丈夫です。お茶を飲みながら、ふだんの様子をご覧ください。"
+        }
+      ]
+    },
+    {
+      "slug": "day",
+      "title": "1日の過ごし方",
+      "description": "送迎から入浴、昼ごはん、午後の活動まで。こもれび舎（架空）での1日の過ごし方と、季節の行事を紹介します。",
+      "sections": [
+        {
+          "id": "day-intro",
+          "type": "intro",
+          "heading": "1日の過ごし方",
+          "body": "決まった予定はありますが、無理に参加しなくても大丈夫です。\n縁側でお茶を飲みながら、のんびり過ごす日があってもいいと考えています。",
+          "imageId": "care-tea"
+        },
+        {
+          "id": "meal",
+          "type": "prose",
+          "variant": "photo-story",
+          "heading": "台所でつくる、昼ごはん",
+          "body": "昼ごはんは、毎朝台所でつくっています。だしからとる汁物と、季節の野菜のおかず。\nかむ力や飲み込む力に合わせて、きざんだり、やわらかく煮たりもします。",
+          "imageId": "care-meal"
+        },
+        {
+          "id": "activities",
+          "type": "services",
+          "variant": "activities",
+          "heading": "午後の活動から、選べます。",
+          "items": [
+            {
+              "title": "手仕事",
+              "body": "塗り絵、ちぎり絵、編み物、季節の飾りづくり。|care-coloring"
+            },
+            {
+              "title": "畑と庭",
+              "body": "小さな畑で、野菜や花を育てています。|care-garden"
+            },
+            {
+              "title": "おしゃべり・回想",
+              "body": "昔の写真や道具をきっかけに、思い出を話します。|care-reading"
+            }
+          ]
+        },
+        {
+          "id": "seasons",
+          "type": "custom",
+          "variant": "seasons",
+          "heading": "季節の行事",
+          "body": "毎月ひとつ、季節を感じる行事をしています。",
+          "items": [
+            {
+              "title": "春",
+              "body": "お花見の散歩、畑の種まき、柏餅づくり。"
+            },
+            {
+              "title": "夏",
+              "body": "そうめん流し、うちわづくり、畑の収穫。"
+            },
+            {
+              "title": "秋",
+              "body": "敬老のお祝い、芋煮会、紅葉の写真の切り絵。"
+            },
+            {
+              "title": "冬",
+              "body": "書き初め、餅つき、節分の豆まき。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "service",
+      "title": "ご利用について",
+      "description": "サービスの内容、ご利用までの流れ、料金の考え方を案内します（架空の施設のデモです）。",
+      "sections": [
+        {
+          "id": "service-intro",
+          "type": "intro",
+          "heading": "ご利用について",
+          "body": "介護保険の「要支援」「要介護」の認定を受けた方がご利用いただけます。\nまだ認定を受けていない方も、手続きのご相談からお受けします。",
+          "imageId": "care-blue"
+        },
+        {
+          "id": "start",
+          "type": "process",
+          "variant": "steps",
+          "heading": "ご利用までの流れ",
+          "items": [
+            {
+              "title": "ご相談",
+              "body": "担当のケアマネジャー、または当事業所へお電話ください。"
+            },
+            {
+              "title": "見学・体験",
+              "body": "実際の1日を、半日から体験していただけます。"
+            },
+            {
+              "title": "ご契約",
+              "body": "ご自宅に伺い、利用の曜日や送迎の時間を決めます。"
+            },
+            {
+              "title": "利用開始",
+              "body": "最初の数回は、職員がこまめに様子をお伝えします。"
+            }
+          ]
+        },
+        {
+          "id": "fee",
+          "type": "company",
+          "variant": "fee",
+          "heading": "料金の考え方",
+          "body": "デモのため金額は掲載していません。実際のサイトでは、要介護度ごとの料金表を掲載します。",
+          "items": [
+            {
+              "title": "介護保険の自己負担",
+              "body": "介護保険で決められた料金の1〜3割（負担の割合はお持ちの証で確認できます）"
+            },
+            {
+              "title": "食費",
+              "body": "昼ごはんとおやつの実費"
+            },
+            {
+              "title": "その他",
+              "body": "手仕事の材料費など、内容に応じた実費"
+            }
+          ]
+        },
+        {
+          "id": "service-faq",
+          "type": "faq",
+          "variant": "faq",
+          "heading": "よくあるご質問",
+          "items": [
+            {
+              "title": "車いすでも利用できますか。",
+              "body": "はい。車いすのまま乗れる送迎車でお迎えに伺います。"
+            },
+            {
+              "title": "入浴だけの利用はできますか。",
+              "body": "半日の利用など、ご希望に合わせた時間のご相談もお受けします。"
+            },
+            {
+              "title": "見学は、本人がいなくても大丈夫ですか。",
+              "body": "大丈夫です。まずはご家族だけで雰囲気を見に来られる方も多くいらっしゃいます。"
+            },
+            {
+              "title": "体調が悪い日は休めますか。",
+              "body": "当日の朝にお電話いただければ、お休みにできます。"
+            }
+          ]
+        },
+        {
+          "id": "service-cta",
+          "type": "cta",
+          "variant": "visit",
+          "heading": "わからないことは、\nお電話でも。",
+          "body": "制度のことも、手続きのことも、わかるところから一緒に整理します。"
+        }
+      ]
+    },
+    {
+      "slug": "recruit",
+      "title": "職員募集",
+      "description": "介護職員・看護職員・送迎ドライバーの募集です（架空の施設のデモです）。",
+      "sections": [
+        {
+          "id": "recruit-intro",
+          "type": "intro",
+          "variant": "recruit-head",
+          "heading": "急がせない介護を、\n一緒に。",
+          "body": "定員の小さな事業所なので、一人ひとりの話をゆっくり聞く時間があります。\n「流れ作業の介護に疲れた」という方にも、来ていただきたい職場です。",
+          "imageId": "care-hands"
+        },
+        {
+          "id": "recruit-jobs",
+          "type": "services",
+          "variant": "jobs",
+          "heading": "募集している仕事",
+          "items": [
+            {
+              "title": "介護職員",
+              "body": "入浴・食事の介助、活動の準備、送迎の付き添い。|正社員・パート|資格がなくても応募できます"
+            },
+            {
+              "title": "看護職員",
+              "body": "利用者の健康チェック、服薬の確認、ご家族への様子の共有。|パート|週2日から"
+            },
+            {
+              "title": "送迎ドライバー",
+              "body": "朝と夕方の送迎車の運転と、乗り降りの手伝い。|パート|普通免許"
+            }
+          ]
+        },
+        {
+          "id": "workplace",
+          "type": "strengths",
+          "variant": "workplace",
+          "heading": "こんな職場です",
+          "items": [
+            {
+              "title": "夜勤はありません",
+              "body": "日中のみの営業なので、生活のリズムを崩さずに働けます。"
+            },
+            {
+              "title": "日曜はお休み",
+              "body": "営業は月曜から土曜まで。シフトは希望を聞いて決めます。"
+            },
+            {
+              "title": "資格の取得を応援",
+              "body": "介護福祉士などの受験に向けて、勤務の調整をします。"
+            },
+            {
+              "title": "記録は短く",
+              "body": "連絡帳と記録をタブレットにまとめ、書く時間を減らしています。"
+            }
+          ]
+        },
+        {
+          "id": "recruit-cta",
+          "type": "cta",
+          "variant": "entry",
+          "heading": "まずは、半日見学から。",
+          "body": "働く前に、ふだんの1日を見に来てください。応募するかどうかは、そのあとで決めてもらえれば大丈夫です。"
+        }
+      ]
+    },
+    {
+      "slug": "contact",
+      "title": "見学・ご相談",
+      "description": "見学・体験・ご利用のご相談、職員応募のお申し込みフォームです。デモのため送信はされません。",
+      "sections": [
+        {
+          "id": "contact-intro",
+          "type": "intro",
+          "heading": "見学・ご相談",
+          "body": "見学と体験は、いつでも受け付けています。\nご都合のよい日を、第3希望まで教えてください。"
+        },
+        {
+          "id": "facility",
+          "type": "company",
+          "heading": "事業所の概要",
+          "items": [
+            {
+              "title": "名称",
+              "body": "デイサービス こもれび舎（架空の事業所です）"
+            },
+            {
+              "title": "サービス",
+              "body": "通所介護（デイサービス）・介護予防通所サービス"
+            },
+            {
+              "title": "営業日",
+              "body": "月曜〜土曜（日曜・年末年始はお休み）"
+            },
+            {
+              "title": "提供時間",
+              "body": "9:15〜16:15（送迎時間を除く）"
+            },
+            {
+              "title": "送迎の範囲",
+              "body": "デモのため掲載していません（想定：事業所から車で15分ほどの範囲）"
+            },
+            {
+              "title": "所在地",
+              "body": "デモのため掲載していません"
+            }
+          ]
+        },
+        {
+          "id": "contact-form",
+          "type": "form",
+          "heading": "お申し込みフォーム"
+        }
+      ]
+    },
+    {
+      "slug": "privacy",
+      "title": "プライバシーポリシー",
+      "description": "個人情報の取り扱いについて（デモ用の文面）。",
+      "sections": [
+        {
+          "id": "privacy-body",
+          "type": "prose",
+          "heading": "プライバシーポリシー",
+          "body": "このページはデモ用の文面です。実際の公開時は、取得する情報、利用目的、保管期間、第三者提供の有無、問い合わせ窓口を、事業所の運用に合わせて記載します。\n\nお申し込みフォームで受け取った氏名・連絡先・内容は、見学・ご相談・採用のご連絡のためだけに使用します。"
+        }
+      ]
+    }
+  ],
+  "design": {
+    "id": "komorebi",
+    "name": "木漏れ日と縁側",
+    "thesis": "親の通う場所を探す家族に、窓から差す光と縁側のような穏やかさで「ここなら安心して任せられる」と感じさせる。大きめの文字と、太陽が1日をたどる動きで、過ごし方を具体的に思い浮かべてもらう。",
+    "hero": "image",
+    "tokens": {
+      "paper": "#F7F2E8",
+      "ink": "#2F2A22",
+      "line": "#D8CDB8",
+      "surface": "#EDE4D2",
+      "focus": "#B5652E",
+      "width": "1200px",
+      "space": "120px",
+      "space-mobile": "72px",
+      "display": "\"Hiragino Maru Gothic ProN\",\"Hiragino Maru Gothic Pro\",\"BIZ UDPGothic\",\"Hiragino Sans\",\"Noto Sans JP\",\"Noto Sans CJK JP\",sans-serif"
+    }
+  }
+}

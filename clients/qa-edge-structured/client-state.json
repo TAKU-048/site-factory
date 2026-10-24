@@ -1,0 +1,10 @@
+{
+  "id": "qa-edge-structured",
+  "revision": "f1b65e2c00f56a84eca1",
+  "presetId": "structured",
+  "createdAt": "2026-10-19T08:17:09.696Z",
+  "updatedAt": "2026-10-19T08:17:09.696Z",
+  "status": "draft",
+  "approvals": {},
+  "engineVersion": "0.1.0"
+}

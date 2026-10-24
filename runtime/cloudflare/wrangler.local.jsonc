@@ -1,0 +1,11 @@
+{
+  "name":"site-factory-form-local",
+  "main":"src/local-worker.ts",
+  "compatibility_date":"2026-10-19",
+  "workers_dev":false,
+  "preview_urls":false,
+  "assets":{"directory":"../../clients/qa-form-local/dist","binding":"ASSETS","not_found_handling":"404-page","run_worker_first":["/api/*","/__scheduled"]},
+  "d1_databases":[{"binding":"DB","database_name":"contact-local","database_id":"00000000-0000-4000-8000-000000000001","migrations_dir":"migrations","remote":false}],
+  "vars":{"CONFIG":{"mode":"local","adapter":"local","origin":"http://127.0.0.1:4350","hostname":"127.0.0.1","fields":["name","email","message"],"from":"通知 <forms@example.invalid>","to":"owner@example.invalid","clientId":"qa-form-local"}},
+  "observability":{"enabled":false}
+}

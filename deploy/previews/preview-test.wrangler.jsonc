@@ -1,0 +1,13 @@
+// 確認用プレビューの試し公開（2026-10-22）。中身は架空の介護デモ（clients/demo-care-day/dist）。
+// 公開後、ダッシュボードで Cloudflare Access（メール認証）をかけ、許可したメールアドレスだけが見られるかを確かめる。
+// 公開URL: https://preview-test.tk-sites.workers.dev
+{
+  "name": "preview-test",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "../../clients/demo-care-day/dist",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": false
+}

@@ -1,0 +1,309 @@
+{
+  "company": {
+    "name": "中華そば 灯（制作デモ）",
+    "tagline": "仕事帰りの、\nもう一杯の灯り。",
+    "description": "鶏と煮干しのスープに、自家製の細麺。夜遅くまで灯りをともす、駅前の小さな中華そば屋です。\n飲食店のホームページの見本として作った、架空のお店のデモです。",
+    "email": "demo@example.com",
+    "phone": "",
+    "address": "デモのため所在地は掲載していません（想定：駅から徒歩3分の商店街）。",
+    "philosophy": "毎日食べても、また食べたくなる一杯を。",
+    "website": "https://example.invalid"
+  },
+  "industry": "restaurant",
+  "demo": true,
+  "factsConfirmed": true,
+  "assets": [
+    {
+      "id": "ramen-hero",
+      "path": "ramen-hero.webp",
+      "alt": "青い器に半熟卵と青菜がのったラーメンを真上から見た様子",
+      "permitted": true,
+      "source": "Photo: Muhammad Fawdy / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "ramen-special",
+      "path": "ramen-special.webp",
+      "alt": "半熟卵と挽き肉、海苔がのったラーメン",
+      "permitted": true,
+      "source": "Photo: Andy Luo / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "ramen-shoyu",
+      "path": "ramen-shoyu.webp",
+      "alt": "澄んだスープに半熟卵とねぎがのったラーメン",
+      "permitted": true,
+      "source": "Photo: Ruben Mavarez / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "ramen-shio",
+      "path": "ramen-shio.webp",
+      "alt": "海老と半熟卵、絹さやがのった塩ラーメン",
+      "permitted": true,
+      "source": "Photo: Michele Blackwell / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "ramen-miso",
+      "path": "ramen-miso.webp",
+      "alt": "赤みのあるスープに半熟卵がのった辛味噌ラーメン",
+      "permitted": true,
+      "source": "Photo: Viktor Ritsvall / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "side-gyoza",
+      "path": "side-gyoza.webp",
+      "alt": "焼き目のついた餃子が並んだ皿",
+      "permitted": true,
+      "source": "Photo: Mikey Frost / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "shop-counter",
+      "path": "shop-counter.webp",
+      "alt": "どんぶりが積まれた木のカウンターと厨房",
+      "permitted": true,
+      "source": "Photo: Agata Malankiewicz / Unsplash（Unsplash License）"
+    }
+  ],
+  "form": {
+    "connected": false,
+    "fields": [
+      "name",
+      "email",
+      "message"
+    ]
+  },
+  "pages": [
+    {
+      "slug": "",
+      "title": "駅前の中華そば屋",
+      "description": "鶏と煮干しのスープに自家製の細麺。夜遅くまで営業する中華そば屋の、架空のお店のデモサイトです。",
+      "sections": [
+        {
+          "id": "hero",
+          "type": "hero",
+          "variant": "noren",
+          "heading": "仕事帰りの、\nもう一杯の灯り。",
+          "body": "鶏と煮干しのスープに、自家製の細麺。夜は23時まで灯りをともしています。",
+          "imageId": "ramen-hero"
+        },
+        {
+          "id": "recommend",
+          "type": "projects",
+          "variant": "recommend",
+          "heading": "まず食べてほしい三杯",
+          "items": [
+            {
+              "title": "中華そば",
+              "body": "900円|鶏と煮干しの醤油スープ。いちばん最初に食べてほしい一杯。"
+            },
+            {
+              "title": "特製そば",
+              "body": "1,250円|味玉、チャーシュー二種、海苔をのせた全部のせ。"
+            },
+            {
+              "title": "塩そば",
+              "body": "950円|昆布と貝の旨みの塩スープ。海老をのせた季節の一杯。"
+            }
+          ]
+        },
+        {
+          "id": "kodawari",
+          "type": "strengths",
+          "variant": "three",
+          "heading": "一杯の、つくり方。",
+          "items": [
+            {
+              "title": "スープ",
+              "body": "丸鶏と煮干しを、毎朝6時間かけて炊きます。醤油は二種類をあわせています。"
+            },
+            {
+              "title": "麺",
+              "body": "国産小麦の細麺を、毎日店で打っています。スープがよく絡む細さです。"
+            },
+            {
+              "title": "チャーシュー",
+              "body": "豚の肩ロースを低温でじっくり。脂の甘みが残るように仕上げます。"
+            }
+          ]
+        },
+        {
+          "id": "hours",
+          "type": "company",
+          "variant": "hours",
+          "heading": "営業のご案内",
+          "body": "11:30〜15:00／17:30〜23:00（L.O. 22:30）\n定休日：火曜日\n席数：カウンター10席"
+        },
+        {
+          "id": "visit",
+          "type": "cta",
+          "variant": "visit",
+          "heading": "今夜、灯りをつけて待っています。",
+          "body": "予約はいりません。混み合う時間は12時台と19時台です。"
+        }
+      ]
+    },
+    {
+      "slug": "menu",
+      "title": "お品書き",
+      "description": "中華そば、特製そば、塩そば、辛味噌そば、餃子など。お品書きと価格（デモ用の例）です。",
+      "sections": [
+        {
+          "id": "menu-intro",
+          "type": "intro",
+          "heading": "お品書き",
+          "body": "価格はすべて税込です。（デモのため、価格は架空の例です）\n麺の大盛りは無料。食券機でお求めください。"
+        },
+        {
+          "id": "menu-ramen",
+          "type": "services",
+          "variant": "boards",
+          "heading": "そば",
+          "items": [
+            {
+              "title": "中華そば",
+              "body": "900円|鶏と煮干しの醤油スープ。"
+            },
+            {
+              "title": "特製そば",
+              "body": "1,250円|味玉、チャーシュー二種、海苔の全部のせ。"
+            },
+            {
+              "title": "塩そば",
+              "body": "950円|昆布と貝の旨みの塩スープ。"
+            },
+            {
+              "title": "辛味噌そば",
+              "body": "1,000円|三種の味噌に、自家製のラー油。"
+            },
+            {
+              "title": "つけそば",
+              "body": "1,050円|太麺を、濃いめのつけ汁で。夏季限定。"
+            }
+          ]
+        },
+        {
+          "id": "menu-side",
+          "type": "services",
+          "variant": "boards-side",
+          "heading": "一品・ご飯",
+          "items": [
+            {
+              "title": "焼き餃子",
+              "body": "450円|五個。羽根つきで焼き上げます。"
+            },
+            {
+              "title": "チャーシュー丼",
+              "body": "400円|刻んだチャーシューと葱をご飯に。"
+            },
+            {
+              "title": "味玉",
+              "body": "150円|醤油だれに一晩漬けた半熟卵。"
+            },
+            {
+              "title": "ライス",
+              "body": "150円|スープを最後まで楽しむ方に。"
+            }
+          ]
+        },
+        {
+          "id": "allergy",
+          "type": "prose",
+          "heading": "アレルギーについて",
+          "body": "スープに小麦・卵・乳・えび・かに・大豆・鶏肉・豚肉を使用しています。詳しくは店員にお尋ねください。（デモ用の表示例です）"
+        }
+      ]
+    },
+    {
+      "slug": "kodawari",
+      "title": "こだわり",
+      "description": "スープ、麺、チャーシュー。一杯ができるまでの仕込みを紹介します。",
+      "sections": [
+        {
+          "id": "kodawari-intro",
+          "type": "intro",
+          "heading": "こだわり",
+          "body": "派手なことはしていません。毎日同じ時間に、同じ手順で仕込むこと。それがいちばんのこだわりです。"
+        },
+        {
+          "id": "day-prep",
+          "type": "process",
+          "variant": "prep",
+          "heading": "一日の仕込み",
+          "items": [
+            {
+              "title": "6:00　スープを炊く",
+              "body": "丸鶏と煮干しを寸胴に入れ、火加減を見ながら炊き始めます。"
+            },
+            {
+              "title": "8:00　麺を打つ",
+              "body": "その日の湿度に合わせて水の量を変え、細麺を打ちます。"
+            },
+            {
+              "title": "10:00　チャーシューを仕込む",
+              "body": "前日から漬けた肩ロースを低温で火入れします。"
+            },
+            {
+              "title": "11:30　暖簾を出す",
+              "body": "スープの味を確かめてから、暖簾を掛けます。"
+            }
+          ]
+        },
+        {
+          "id": "counter-story",
+          "type": "prose",
+          "variant": "photo-story",
+          "heading": "カウンター十席の店",
+          "body": "一杯ずつ、目の前で仕上げます。ひとりでも入りやすいように、全席カウンターにしました。",
+          "imageId": "shop-counter"
+        }
+      ]
+    },
+    {
+      "slug": "shop",
+      "title": "店舗情報",
+      "description": "営業時間、定休日、アクセス、お支払い方法などの店舗情報です。",
+      "sections": [
+        {
+          "id": "shop-intro",
+          "type": "intro",
+          "heading": "店舗情報",
+          "body": "駅の改札を出て、商店街をまっすぐ3分。赤い提灯が目印です。（デモのため、実在の場所ではありません）"
+        },
+        {
+          "id": "shop-info",
+          "type": "company",
+          "variant": "shop",
+          "heading": "お店について",
+          "items": [
+            {
+              "title": "営業時間",
+              "body": "11:30〜15:00／17:30〜23:00（L.O. 22:30）"
+            },
+            {
+              "title": "定休日",
+              "body": "火曜日（祝日の場合は翌日）"
+            },
+            {
+              "title": "席数",
+              "body": "カウンター10席（禁煙）"
+            },
+            {
+              "title": "お支払い",
+              "body": "食券機（現金・交通系IC・QRコード決済）"
+            },
+            {
+              "title": "アクセス",
+              "body": "駅から徒歩3分。駐車場はありません。"
+            }
+          ]
+        },
+        {
+          "id": "access-map",
+          "type": "custom",
+          "variant": "map",
+          "heading": "地図",
+          "body": "駅を出て商店街を直進、二つ目の角の手前、左手です。"
+        }
+      ]
+    }
+  ]
+}

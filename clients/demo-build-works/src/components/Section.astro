@@ -1,0 +1,116 @@
+---
+// 杣建築工房（制作デモ）専用のセクション描画。データは共通エンジンの site.json（type / variant / items / imageId）。
+import site from '../data/site.json';
+import ContactForm from './ContactForm.astro';
+import {itemImages,asset,srcset,splitWork} from '../custom/media';
+interface Props {section:{id:string;type:string;variant?:string;heading?:string;body?:string;items?:{title:string;body:string}[];imageId?:string};first?:boolean}
+const {section:s,first=false}=Astro.props;
+const image=asset(s.imageId);
+const imgs=(itemImages[s.id]||[]).map(asset);
+const v=s.variant||'default';
+const H=first?'h1':'h2';
+const categories=[...new Set((s.items||[]).map(i=>splitWork(i.body).category))];
+const c=site.company;
+const heroSlides=(itemImages.hero||[]).map(asset).filter(Boolean);
+const ctaImage=asset('works-dining');
+---
+{s.type==='hero'?(
+<section class="hero" aria-labelledby="hero-title" data-slideshow>
+  <div class="hero-slides">{heroSlides.map((im,i)=><img data-slide class={i===0?'is-active':''} src={`/assets/${im!.path}`} srcset={srcset(im!.path)} sizes="100vw" alt={im!.alt} width="1600" height="1067" fetchpriority={i===0?'high':undefined} loading={i===0?'eager':'lazy'}/>)}</div>
+  <div class="light" aria-hidden="true"></div>
+  <div class="hero-panel">
+    <h1 id="hero-title" class="hero-title">{(s.heading||'').split('\n').map((l,i)=><span class="col" style={`--i:${i}`}>{l}</span>)}</h1>
+    <p class="hero-body">{s.body}</p>
+  </div>
+  <div class="hero-controls">
+    <div class="dots">{heroSlides.map((im,i)=><button type="button" data-dot aria-label={`${i+1}枚目の写真を表示`} aria-current={i===0?'true':'false'}></button>)}</div>
+    <button type="button" class="hero-toggle" data-slideshow-toggle aria-pressed="false">切り替えを止める</button>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
+</section>
+):s.type==='projects'&&v==='pickup'?(
+<section class="section pickup" id={s.id}>
+  <div class="wrap"><div class="head-row" data-reveal><h2>{s.heading}</h2><a class="link" href="/works/">施工例をすべて見る</a></div>
+  <ul class="pickup-grid">{s.items?.map((item,i)=>{const im=imgs[i];return <li class={`pickup-${i}`}><a href="/works/"><span class="shoji" data-reveal style={`--i:${i}`}>{im&&<img src={`/assets/${im.path}`} srcset={srcset(im.path)} sizes={i===0?'(max-width: 768px) 100vw, 60vw':'(max-width: 768px) 100vw, 35vw'} alt={im.alt} width="800" height="600" loading="lazy"/>}</span><span class="work-name">{item.title}</span><span class="work-cat">{item.body}</span></a></li>})}</ul>
+  {s.body&&<p class="note">{s.body}</p>}</div>
+</section>
+):s.type==='projects'?(
+<section class="section gallery" id={s.id}>
+  <div class="wrap"><h2 class="sr-only">{s.heading}</h2>
+  <div class="filters" role="group" aria-label="区分で絞り込む" data-filters hidden>
+    <button type="button" aria-pressed="true" data-filter="all">すべて</button>
+    {categories.map(cat=><button type="button" aria-pressed="false" data-filter={cat}>{cat}</button>)}
+  </div>
+  <p class="filter-status sr-only" role="status" aria-live="polite" data-filter-status></p>
+  <ul class="gallery-grid">{s.items?.map((item,i)=>{const im=imgs[i];const w=splitWork(item.body);return <li class={`g-${i%5}`} data-category={w.category}>
+    <button type="button" class="work-open" data-open-work data-src={im?`/assets/${im.path}`:''} data-srcset={im?srcset(im.path):''} data-alt={im?.alt||''} data-title={item.title} data-cat={w.category} data-text={w.text} aria-label={`${item.title}を大きく見る`}>
+      <span class="shoji" data-reveal>{im&&<img src={`/assets/${im.path}`} srcset={srcset(im.path)} sizes="(max-width: 768px) 100vw, 50vw" alt={im.alt} width="800" height="600" loading="lazy"/>}</span>
+      <span class="work-meta"><span class="work-cat">{w.category}</span><span class="work-name">{item.title}</span><span class="work-text">{w.text}</span></span>
+    </button></li>})}</ul></div>
+  <dialog class="lightbox" data-lightbox aria-labelledby="lb-title">
+    <div class="lb-inner">
+      {imgs[0]&&<img src={`/assets/${imgs[0].path}`} srcset={srcset(imgs[0].path)} sizes="(max-width: 960px) 94vw, 66vw" alt={imgs[0].alt} width="1600" height="1200"/>}
+      <div class="lb-meta"><p class="work-cat" data-lb-cat></p><h3 id="lb-title" class="lb-title" data-lb-title></h3><p class="lb-text" data-lb-text></p><p class="lb-note">写真は素材サイトのイメージで、実際の施工事例ではありません。</p>
+      <div class="lb-nav"><button type="button" data-lb-prev>前の施工例</button><span class="lb-count" data-lb-count></span><button type="button" data-lb-next>次の施工例</button></div></div>
+      <button type="button" class="lb-close" data-lb-close>閉じる</button>
+    </div>
+  </dialog>
+  <script>
+  for(const box of document.querySelectorAll<HTMLElement>('[data-filters]')){
+    box.hidden=false;
+    const items=[...document.querySelectorAll<HTMLElement>('[data-category]')];
+    const status=document.querySelector<HTMLElement>('[data-filter-status]');
+    box.addEventListener('click',(e)=>{
+      const b=(e.target as HTMLElement).closest('button');if(!b)return;
+      const f=b.dataset.filter!;
+      box.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+      box.closest('.gallery')?.classList.toggle('filtered',f!=='all');
+      let n=0;items.forEach(it=>{const show=f==='all'||it.dataset.category===f;it.hidden=!show;if(show){n++;it.querySelector('[data-reveal]')?.classList.add('is-in');}});
+      if(status)status.textContent=`${f==='all'?'すべて':f}の施工例を${n}件表示しています。`;
+    });
+  }
+  </script>
+</section>
+):s.type==='intro'&&first?(
+<section class="page-head" id={s.id}>
+  <div class="wrap page-head-inner" data-reveal><H class="page-title">{s.heading}</H>{s.body&&<p class="page-lead">{s.body}</p>}</div>
+</section>
+):s.type==='intro'?(
+<section class="intro" id={s.id}>
+  <div class="wrap intro-grid">
+    <div class="intro-text" data-reveal><H class="intro-heading">{s.heading}</H>{s.body&&<p class="intro-body">{s.body}</p>}</div>
+    {image&&<div class="intro-figure"><span class="shoji" data-reveal><img data-parallax src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 768px) 100vw, 50vw" alt={image.alt} width="800" height="600" loading="lazy"/></span></div>}
+  </div>
+</section>
+):s.type==='process'?(
+<section class="section flow" id={s.id}>
+  <div class="wrap"><h2 data-reveal>{s.heading}</h2><ol class="flow-list" data-reveal>{s.items?.map((item,i)=><li style={`--i:${i}`}><h3>{item.title}</h3><p>{item.body}</p></li>)}</ol></div>
+</section>
+):s.type==='strengths'?(
+<section class="section principles" id={s.id}>
+  <div class="wrap"><h2 data-reveal>{s.heading}</h2><ul class="principle-list">{s.items?.map((item,i)=><li data-reveal style={`--i:${i}`}><h3>{item.title}</h3><p>{item.body}</p></li>)}</ul></div>
+</section>
+):s.type==='prose'&&image?(
+<section class="section story" id={s.id}>
+  <div class="wrap story-grid"><span class="shoji" data-reveal><img data-parallax src={`/assets/${image.path}`} srcset={srcset(image.path)} sizes="(max-width: 768px) 100vw, 55vw" alt={image.alt} width="800" height="600" loading="lazy"/></span><div data-reveal><h2>{s.heading}</h2><p>{s.body}</p></div></div>
+</section>
+):s.type==='company'?(
+<section class="section company" id={s.id}>
+  <div class="wrap narrow"><H data-reveal>{s.heading}</H>{s.body&&<p class="note">{s.body}</p>}
+  <dl class="company-list" data-reveal><div><dt>名称</dt><dd>{c.name}</dd></div><div><dt>事業内容</dt><dd>注文住宅の設計・施工、リノベーション</dd></div><div><dt>大切にしていること</dt><dd>{c.philosophy}</dd></div><div><dt>所在地</dt><dd>{c.address}</dd></div><div><dt>連絡先</dt><dd>{c.email}</dd></div></dl></div>
+</section>
+):s.type==='cta'?(
+<section class="cta" id={s.id}>
+  {ctaImage&&<img class="cta-bg" data-parallax src={`/assets/${ctaImage.path}`} srcset={srcset(ctaImage.path)} sizes="100vw" alt="" width="1600" height="1200" loading="lazy"/>}
+  <div class="light light--cta" aria-hidden="true"></div>
+  <div class="wrap cta-inner" data-reveal><h2>{s.heading}</h2>{s.body&&<p>{s.body}</p>}<a class="button" href="/contact/">相談・見学を申し込む</a></div>
+</section>
+):s.type==='form'?(
+<section class="section form-section" id={s.id}>
+  <div class="wrap narrow"><h2>{s.heading}</h2><ContactForm/></div>
+</section>
+):(
+<section class="section prose" id={s.id}>
+  <div class="wrap narrow"><H>{s.heading}</H>{s.body&&<p class="prose-body">{s.body}</p>}</div>
+</section>
+)}

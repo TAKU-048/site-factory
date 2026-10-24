@@ -1,0 +1,4 @@
+# Official Cloudflare API MCP; project-scoped, no credentials in this file.
+[mcp_servers.cloudflare-api]
+url = "https://mcp.cloudflare.com/mcp"
+enabled = true

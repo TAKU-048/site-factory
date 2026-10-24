@@ -1,0 +1,416 @@
+{
+  "company": {
+    "name": "hair studio Lune（制作デモ）",
+    "tagline": "鏡を見るのが、\n少し楽しみになる髪へ。",
+    "description": "朝のスタイリングが楽になる、扱いやすいカットが得意な小さなサロンです。\n美容室のホームページの見本として作った、架空のサロンのデモです。",
+    "email": "demo@example.com",
+    "address": "デモのため所在地は掲載していません（想定：駅から徒歩5分の路面店）。",
+    "phone": "",
+    "philosophy": "似合うより先に、扱いやすいを。",
+    "website": "https://example.invalid",
+    "logoId": ""
+  },
+  "industry": "beauty",
+  "demo": true,
+  "factsConfirmed": true,
+  "assets": [
+    {
+      "id": "salon-hero",
+      "path": "salon-hero.webp",
+      "alt": "アーチ型の鏡とスタイリングチェアが並ぶ、明るいサロンの店内",
+      "permitted": true,
+      "source": "Photo: Barney Goodman / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "salon-cut",
+      "path": "salon-cut.webp",
+      "alt": "濡れた長い髪をはさみで整えている手元",
+      "permitted": true,
+      "source": "Photo: Farhad Ibrahimzade / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "salon-blow",
+      "path": "salon-blow.webp",
+      "alt": "ロールブラシで明るい髪をブローしている様子",
+      "permitted": true,
+      "source": "Photo: Jenna Oslin / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "salon-shampoo",
+      "path": "salon-shampoo.webp",
+      "alt": "シャンプー台で髪を洗ってもらっている様子",
+      "permitted": true,
+      "source": "Photo: Lindsay Cash / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "salon-curl",
+      "path": "salon-curl.webp",
+      "alt": "コテで髪に柔らかいカールをつけている様子",
+      "permitted": true,
+      "source": "Photo: Baylee Gramling / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "salon-seat",
+      "path": "salon-seat.webp",
+      "alt": "丸い鏡と木の棚の前に置かれたスタイリングチェア",
+      "permitted": true,
+      "source": "Photo: Stefan Vibes / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "style-short-red",
+      "path": "style-short-red.webp",
+      "alt": "赤みのある短い髪の人が振り返っている写真",
+      "permitted": true,
+      "source": "Photo: amirreza momennia / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "style-pixie",
+      "path": "style-pixie.webp",
+      "alt": "明るい色のベリーショートに丸眼鏡の人の写真",
+      "permitted": true,
+      "source": "Photo: Alex Perez / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "style-bob",
+      "path": "style-bob.webp",
+      "alt": "肩につく長さの黒髪のボブの人の写真",
+      "permitted": true,
+      "source": "Photo: Luis González Sosa / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "style-color",
+      "path": "style-color.webp",
+      "alt": "鮮やかなピンクに染めた短い髪の人の写真",
+      "permitted": true,
+      "source": "Photo: Clay Elliot / Unsplash（Unsplash License）"
+    },
+    {
+      "id": "style-side",
+      "path": "style-side.webp",
+      "alt": "赤みのある短い髪の人の横顔",
+      "permitted": true,
+      "source": "Photo: amirreza momennia / Unsplash（Unsplash License）"
+    }
+  ],
+  "form": {
+    "connected": false,
+    "mode": "disconnected",
+    "fields": [
+      "name",
+      "phone",
+      "email",
+      "message"
+    ]
+  },
+  "pages": [
+    {
+      "slug": "",
+      "title": "扱いやすいカットの美容室",
+      "description": "朝のスタイリングが楽になるカットが得意な、架空の美容室のデモサイトです。",
+      "sections": [
+        {
+          "id": "hero",
+          "type": "hero",
+          "variant": "mirror",
+          "heading": "鏡を見るのが、\n少し楽しみになる髪へ。",
+          "body": "朝のスタイリングが、5分で終わる。扱いやすさから考えるカットが得意です。",
+          "imageId": "salon-hero"
+        },
+        {
+          "id": "about",
+          "type": "intro",
+          "variant": "split",
+          "heading": "似合うより先に、扱いやすいを。",
+          "body": "毎朝、自分で整えるのはお客さま自身です。\nだからカウンセリングでは「なりたい形」と同じくらい、髪のくせ、朝にかけられる時間、普段の結び方を伺います。",
+          "imageId": "salon-cut"
+        },
+        {
+          "id": "styles",
+          "type": "projects",
+          "variant": "style-strip",
+          "heading": "スタイルのイメージ",
+          "body": "写真は素材サイトのモデル写真で、当サロンの施術例ではありません。",
+          "items": [
+            {
+              "title": "ショート",
+              "body": "首すじがすっきり見える、軽さのあるショート。"
+            },
+            {
+              "title": "ベリーショート",
+              "body": "朝はタオルドライだけでまとまる長さ。"
+            },
+            {
+              "title": "ボブ",
+              "body": "毛先が内側に入りやすいように重さを残したボブ。"
+            },
+            {
+              "title": "カラー",
+              "body": "色落ちの過程まで考えて色を選びます。"
+            }
+          ]
+        },
+        {
+          "id": "menu-pick",
+          "type": "services",
+          "variant": "menu-pick",
+          "heading": "主なメニュー",
+          "items": [
+            {
+              "title": "カット",
+              "body": "6,600円"
+            },
+            {
+              "title": "カット＋カラー",
+              "body": "13,200円〜"
+            },
+            {
+              "title": "カット＋パーマ",
+              "body": "14,300円〜"
+            }
+          ]
+        },
+        {
+          "id": "reserve-cta",
+          "type": "cta",
+          "variant": "reserve",
+          "heading": "はじめての方も、まずはご相談から。",
+          "body": "カウンセリングだけのご来店も歓迎しています。"
+        }
+      ]
+    },
+    {
+      "slug": "menu",
+      "title": "メニュー・料金",
+      "description": "カット、カラー、パーマ、トリートメントのメニューと料金（税込・デモ用の例）です。",
+      "sections": [
+        {
+          "id": "menu-intro",
+          "type": "intro",
+          "heading": "メニュー・料金",
+          "body": "料金はすべて税込です。髪の長さや量による追加料金はありません。（デモのため、料金は架空の例です）"
+        },
+        {
+          "id": "menu-cut",
+          "type": "services",
+          "variant": "price",
+          "heading": "カット",
+          "items": [
+            {
+              "title": "カット（シャンプー・ブロー込み）",
+              "body": "6,600円"
+            },
+            {
+              "title": "前髪カット",
+              "body": "1,100円"
+            },
+            {
+              "title": "学生カット",
+              "body": "4,400円"
+            }
+          ]
+        },
+        {
+          "id": "menu-color",
+          "type": "services",
+          "variant": "price",
+          "heading": "カラー",
+          "items": [
+            {
+              "title": "カット＋カラー",
+              "body": "13,200円〜"
+            },
+            {
+              "title": "リタッチカラー（根元のみ）",
+              "body": "6,600円"
+            },
+            {
+              "title": "ハイライト",
+              "body": "＋4,400円〜"
+            }
+          ]
+        },
+        {
+          "id": "menu-perm",
+          "type": "services",
+          "variant": "price",
+          "heading": "パーマ・トリートメント",
+          "items": [
+            {
+              "title": "カット＋パーマ",
+              "body": "14,300円〜"
+            },
+            {
+              "title": "縮毛矯正",
+              "body": "19,800円〜"
+            },
+            {
+              "title": "トリートメント",
+              "body": "＋3,300円"
+            }
+          ]
+        },
+        {
+          "id": "menu-note",
+          "type": "prose",
+          "heading": "ご予約の前に",
+          "body": "「〜」がついているメニューは、薬剤の量や施術内容で料金が変わります。カウンセリングで金額をお伝えしてから施術を始めます。"
+        }
+      ]
+    },
+    {
+      "slug": "style",
+      "title": "スタイル",
+      "description": "ショート、ボブ、カラーなどのスタイルのイメージです。写真は素材サイトのモデル写真です。",
+      "sections": [
+        {
+          "id": "style-intro",
+          "type": "intro",
+          "heading": "スタイル",
+          "body": "長さや雰囲気を伝えるときの参考にしてください。\n※ 写真は素材サイト（Unsplash）のモデル写真で、当サロンの施術例ではありません。"
+        },
+        {
+          "id": "style-gallery",
+          "type": "projects",
+          "variant": "style-gallery",
+          "heading": "スタイルのイメージ一覧",
+          "items": [
+            {
+              "title": "軽さのあるショート",
+              "body": "ショート|首すじと耳まわりをすっきりさせ、トップに丸みを残します。"
+            },
+            {
+              "title": "ベリーショート",
+              "body": "ショート|朝はタオルドライだけでまとまる短さ。"
+            },
+            {
+              "title": "重さを残したボブ",
+              "body": "ボブ|毛先が自然に内側へ入るよう、外側の重さを残します。"
+            },
+            {
+              "title": "ピンクのショート",
+              "body": "カラー|ブリーチを重ねた鮮やかな色。色落ちの過程も楽しめます。"
+            },
+            {
+              "title": "赤みのあるショート",
+              "body": "カラー|肌なじみのよい赤みのブラウン。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "salon",
+      "title": "サロン案内",
+      "description": "営業時間、定休日、アクセス、施術の流れなどのサロン案内です。",
+      "sections": [
+        {
+          "id": "salon-intro",
+          "type": "intro",
+          "heading": "サロン案内",
+          "body": "席は3席だけの小さなサロンです。となりを気にせず、ゆっくり過ごしていただけます。",
+          "imageId": "salon-seat"
+        },
+        {
+          "id": "visit-flow",
+          "type": "process",
+          "variant": "visit",
+          "heading": "ご来店の流れ",
+          "items": [
+            {
+              "title": "カウンセリング",
+              "body": "なりたい形、髪のくせ、朝のスタイリングの時間を伺います。"
+            },
+            {
+              "title": "シャンプー",
+              "body": "頭皮を軽くほぐしながら洗います。"
+            },
+            {
+              "title": "施術",
+              "body": "仕上がりの長さを確認しながら進めます。"
+            },
+            {
+              "title": "スタイリングのコツ",
+              "body": "ご自宅での乾かし方と整え方をお伝えします。"
+            }
+          ]
+        },
+        {
+          "id": "salon-info",
+          "type": "company",
+          "variant": "salon",
+          "heading": "サロン情報",
+          "items": [
+            {
+              "title": "営業時間",
+              "body": "10:00〜19:00（最終受付：カット18:00、カラー・パーマ17:00）"
+            },
+            {
+              "title": "定休日",
+              "body": "月曜日・第3火曜日"
+            },
+            {
+              "title": "席数",
+              "body": "3席"
+            },
+            {
+              "title": "お支払い",
+              "body": "現金・クレジットカード・QRコード決済"
+            },
+            {
+              "title": "アクセス",
+              "body": "駅から徒歩5分。近くにコインパーキングがあります。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "reserve",
+      "title": "予約する",
+      "description": "ご予約・ご相談のフォームです。デモのため送信はされません。",
+      "sections": [
+        {
+          "id": "reserve-intro",
+          "type": "intro",
+          "heading": "予約する",
+          "body": "ご希望の日時とメニューをお知らせください。確認のご連絡をもって予約確定となります。"
+        },
+        {
+          "id": "reserve-form",
+          "type": "form",
+          "heading": "予約・相談フォーム"
+        }
+      ]
+    },
+    {
+      "slug": "privacy",
+      "title": "プライバシーポリシー",
+      "description": "個人情報の取り扱いについて（デモ用の文面）。",
+      "sections": [
+        {
+          "id": "privacy-body",
+          "type": "prose",
+          "heading": "プライバシーポリシー",
+          "body": "このページはデモ用の文面です。実際の公開時は、取得する情報、利用目的、保管期間、第三者提供の有無、問い合わせ窓口を、そのサロンの運用に合わせて記載します。\n\n予約フォームで受け取った氏名・連絡先・内容は、予約の確認と連絡のためだけに使用します。"
+        }
+      ]
+    }
+  ],
+  "design": {
+    "id": "mirror-soft",
+    "name": "鏡と光",
+    "thesis": "髪型を変えたい人に、アーチ型の鏡に映る仕上がりと柔らかな光で「ここなら任せられる」と感じさせ、メニューと料金を明快に見せて予約へつなぐ。",
+    "hero": "image",
+    "tokens": {
+      "paper": "#EEEDF1",
+      "ink": "#2B2533",
+      "line": "#C3BECB",
+      "surface": "#E2DEE6",
+      "focus": "#7A4A55",
+      "width": "1280px",
+      "space": "128px",
+      "space-mobile": "72px",
+      "display": "\"Hiragino Sans\",\"Hiragino Kaku Gothic ProN\",\"Noto Sans JP\",\"Noto Sans CJK JP\",\"Yu Gothic\",sans-serif"
+    }
+  }
+}

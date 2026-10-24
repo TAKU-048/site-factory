@@ -1,0 +1,19 @@
+{
+  "name": "site-factory-cloudflare-local",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/contact.test.ts tests/store.test.ts tests/notify.test.ts tests/outbox.test.ts tests/routing.test.ts",
+    "test:local": "node --experimental-strip-types --test tests/local-d1.test.ts",
+    "check": "../../site-template/node_modules/.bin/tsc -p tsconfig.json",
+    "dev": "node ../../tools/wrangler-local.mjs dev",
+    "bundle": "node ../../tools/wrangler-local.mjs bundle",
+    "migrate:local": "node ../../tools/wrangler-local.mjs migrate",
+    "summary:local": "node ../../tools/wrangler-local.mjs summary"
+  },
+  "devDependencies": {
+    "wrangler": "4.151.1",
+    "miniflare": "5.20261012.1-beta"
+  }
+}
