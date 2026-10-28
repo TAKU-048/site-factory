@@ -2,7 +2,7 @@ node_modules/
 .cache/
 .astro/
 dist/
-vendor/
+vendor/*
 # clients/ は 2026-10-24 から管理対象（node_modules・dist・.astro は上の規則で除外）
 clients/*/.wrangler/
 exports/
@@ -23,3 +23,10 @@ releases/
 # 2026-10-24 追加
 .gitignore.bak-*
 .mcp.json.local
+
+# 2026-10-28 EmDash（docs/emdash.md）
+!vendor/emdash-skills/
+clients/*/.dev.vars
+clients/*/.dev.vars.*
+clients/*/.emdash/
+clients/*/data.db*

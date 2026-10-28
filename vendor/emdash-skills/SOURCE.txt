@@ -1,0 +1,6 @@
+EmDash 公式のエージェント用手順書（skills）の写し
+取得元：https://github.com/emdash-cms/emdash （skills/ フォルダ）
+版：ec03a5e0f6c3a836ea33f3547d8f22e87e0901a3（2026-10-28 取得）
+ライセンス：MIT（Copyright 2026 Cloudflare Inc.）→ LICENSE
+写したもの：building-emdash-site / emdash-cli / creating-plugins / upgrading-emdash / wordpress-theme-to-emdash / wordpress-plugin-to-emdash
+使い方：docs/emdash.md
