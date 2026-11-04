@@ -1,0 +1,9 @@
+# 2026-11-04 ブラウザ向けの安全設定（お客様のサイトすべてに付ける。tk-creative.org と同じ内容）
+# Cloudflare Workers の静的ファイルの配信に付く。問い合わせフォームの送信先は同じサイトの /api/contact。
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: frame-ancestors 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests

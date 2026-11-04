@@ -12,7 +12,7 @@ Impeccableはvendor/impeccable/にコミット固定で取得済み。「Impecca
 
 ## セキュリティ（2026-10-24 追加）
 - 制作するサイトに PHP・WordPress を使わない（php2shell 対応）。静的サイト＋Cloudflare Workers のみ。ただし必要な時は Cloudflare の EmDash（Astro製のCMS、PHPなし、Workers＋D1＋R2）を使える。手順は docs/emdash.md（2026-10-28 ユーザー指示）。
-- 公開前に、応答ヘッダーに X-Powered-By が出ないこと、/index.php と /wp-login.php が 404 になること、公開フォルダに .php がないことを確認する。
+- 公開前に、応答ヘッダーに X-Powered-By が出ないこと、/index.php と /wp-login.php が 404 になること、公開フォルダに .php がないこと、ブラウザ向けの安全設定（site-template/public/_headers 由来の Strict-Transport-Security・X-Frame-Options など）が付いていることを確認する。
 - お客様のサイトを作ったら、ユーザーに確認を取る前に tools/check-site-text.mjs を実行し、本文の校正とヒアリング回答との照合を行う（手順は 事業設計・決定事項.md「公開前の文章・会社情報チェック」）。
 
 ## Mac がネットにつながっていなくても進める（2026-10-31 ユーザー指示）
